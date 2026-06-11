@@ -87,6 +87,7 @@
     color: var(--text);
     text-decoration: none;
     cursor: pointer;
+    margin-right: 48px;
   }
   .nav-links {
     display: flex;
@@ -790,7 +791,7 @@
   .gallery-grid {
     display: flex;
     flex-wrap: wrap;
-    gap: 3px;
+    gap: 0;
   }
   .gallery-item {
     flex: 1 1 auto;
@@ -947,6 +948,9 @@
     border-bottom: 1px solid var(--border);
     padding-bottom: 2px;
     transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
   }
   .social-link:hover { color: var(--accent); border-color: var(--accent); }
   /* CONTACT FORM */
@@ -1503,19 +1507,25 @@
     <p class="section-eyebrow" style="margin-top:48px"><span class="en">Additional Clips</span><span class="sr">Dodatni Klipovi</span></p>
     <div class="clips-grid">
       <div class="clip-item">
-        <div class="clip-thumb"><div class="clip-play">▶</div></div>
-        <div class="clip-title">A Cross in the Desert</div>
-        <div class="clip-meta">Film · 2022 · Saint Petka</div>
-      </div>
-      <div class="clip-item">
-        <div class="clip-thumb"><div class="clip-play">▶</div></div>
-        <div class="clip-title">Isolation</div>
-        <div class="clip-meta">Film · 2024 · Dr. Ema Popović</div>
-      </div>
-      <div class="clip-item">
-        <div class="clip-thumb"><div class="clip-play">▶</div></div>
+        <div class="video-wrapper" style="margin-bottom:16px">
+          <iframe src="https://player.vimeo.com/video/342962584?title=0&byline=0&portrait=0" allowfullscreen allow="autoplay; fullscreen"></iframe>
+        </div>
         <div class="clip-title">Submission</div>
-        <div class="clip-meta">Short Film · 2019</div>
+        <div class="clip-meta"><span class="en">Short Film · 2019 · Best Actress Award</span><span class="sr">Kratki film · 2019 · Nagrada za Najbolju Glumicu</span></div>
+      </div>
+      <div class="clip-item">
+        <div class="video-wrapper" style="margin-bottom:16px">
+          <iframe src="https://player.vimeo.com/video/1155131317?title=0&byline=0&portrait=0" allowfullscreen allow="autoplay; fullscreen"></iframe>
+        </div>
+        <div class="clip-title">Taxi Blues</div>
+        <div class="clip-meta"><span class="en">Film · 2019 · Trailer</span><span class="sr">Film · 2019 · Trejler</span></div>
+      </div>
+      <div class="clip-item">
+        <div class="video-wrapper" style="margin-bottom:16px">
+          <iframe src="https://www.youtube.com/embed/d54-phvVvgU" allowfullscreen allow="autoplay; fullscreen"></iframe>
+        </div>
+        <div class="clip-title">St George Shoots the Dragon</div>
+        <div class="clip-meta"><span class="en">Film · 2009 · Trailer · Best Debutant Award</span><span class="sr">Film · 2009 · Trejler · Nagrada za Najboljeg Debitanta</span></div>
       </div>
     </div>
   </div>
@@ -1736,9 +1746,18 @@
       <div class="contact-info-block">
         <div class="contact-info-label"><span class="en">Online</span><span class="sr">Online</span></div>
         <div class="social-links">
-          <a href="https://www.instagram.com/milena.predic/" class="social-link" target="_blank">Instagram</a>
-          <a href="https://imdb.me/milenapredic" class="social-link" target="_blank">IMDb Pro</a>
-          <a href="https://www.imdb.com/name/nm2131102/" class="social-link" target="_blank">IMDb</a>
+          <a href="https://www.instagram.com/milena.predic/" class="social-link" target="_blank">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/></svg>
+            Instagram
+          </a>
+          <a href="https://imdb.me/milenapredic" class="social-link" target="_blank">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><rect width="24" height="24" rx="4" fill="#F5C518"/><text x="3" y="17" font-size="11" font-weight="900" font-family="Arial" fill="#000">IMDb</text></svg>
+            IMDb Pro
+          </a>
+          <a href="https://www.imdb.com/name/nm2131102/" class="social-link" target="_blank">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><rect width="24" height="24" rx="4" fill="#F5C518"/><text x="3" y="17" font-size="11" font-weight="900" font-family="Arial" fill="#000">IMDb</text></svg>
+            IMDb
+          </a>
         </div>
       </div>
     </div>
