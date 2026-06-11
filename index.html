@@ -1588,6 +1588,7 @@
   </div>
   <div class="gallery-layout">
     <div class="gallery-grid" id="galleryGrid">
+      <!-- First 3 fixed -->
       <div class="gallery-item" onclick="openLightbox('https://raw.githubusercontent.com/LordHidetora/milena-predic-website/main/naslovna_hero_.JPG')">
         <img src="https://raw.githubusercontent.com/LordHidetora/milena-predic-website/main/naslovna_hero_.JPG" alt="Milena Predić">
         <div class="gallery-item-overlay">⊕</div>
@@ -1600,27 +1601,55 @@
         <img src="https://raw.githubusercontent.com/LordHidetora/milena-predic-website/main/about_2.JPG" alt="Milena Predić">
         <div class="gallery-item-overlay">⊕</div>
       </div>
-      <div class="gallery-item" onclick="openLightbox('https://raw.githubusercontent.com/LordHidetora/milena-predic-website/main/work_1.JPG')">
-        <img src="https://raw.githubusercontent.com/LordHidetora/milena-predic-website/main/work_1.JPG" alt="Robin Hood">
-        <div class="gallery-item-overlay">⊕</div>
-      </div>
-      <div class="gallery-item" onclick="openLightbox('https://raw.githubusercontent.com/LordHidetora/milena-predic-website/main/work_2.jpg')">
-        <img src="https://raw.githubusercontent.com/LordHidetora/milena-predic-website/main/work_2.jpg" alt="Isolation">
-        <div class="gallery-item-overlay">⊕</div>
-      </div>
-      <div class="gallery-item" onclick="openLightbox('https://raw.githubusercontent.com/LordHidetora/milena-predic-website/main/work_3.jpg')">
-        <img src="https://raw.githubusercontent.com/LordHidetora/milena-predic-website/main/work_3.jpg" alt="Sedef Magla">
-        <div class="gallery-item-overlay">⊕</div>
-      </div>
-      <div class="gallery-item" onclick="openLightbox('https://raw.githubusercontent.com/LordHidetora/milena-predic-website/main/work_4.jpg')">
-        <img src="https://raw.githubusercontent.com/LordHidetora/milena-predic-website/main/work_4.jpg" alt="A Cross in the Desert">
-        <div class="gallery-item-overlay">⊕</div>
-      </div>
-      <div class="gallery-item" onclick="openLightbox('https://raw.githubusercontent.com/LordHidetora/milena-predic-website/main/work_5.jpg')">
-        <img src="https://raw.githubusercontent.com/LordHidetora/milena-predic-website/main/work_5.jpg" alt="Submission">
-        <div class="gallery-item-overlay">⊕</div>
-      </div>
     </div>
+
+    <script>
+    (function() {
+      const base = 'https://raw.githubusercontent.com/LordHidetora/milena-predic-website/main/';
+      const photos = [
+        'gallery_1.JPG',
+        'gallery_2.JPG',
+        'gallery_3.JPG',
+        'gallery_4.JPG',
+        'gallery_5.JPG',
+        'gallery_6.JPG',
+        'gallery_7.JPG',
+        'gallery_8.jpg',
+        'gallery_9.jpg',
+        'gallery_10.jpg',
+        'gallery_11.JPG',
+        'gallery_12.JPG',
+        'gallery_13.png',
+        'gallery_14.JPG',
+        'gallery_15.JPG',
+        'gallery_16.JPG',
+        'gallery_17.JPG',
+        'gallery_18.JPG',
+        'gallery_19.JPG',
+        'gallery_20.JPG',
+        'gallery_21.JPG',
+        'gallery_22.JPG',
+        'gallery_23.JPG',
+        'gallery_24.JPG',
+      ];
+
+      // Shuffle
+      for (let i = photos.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [photos[i], photos[j]] = [photos[j], photos[i]];
+      }
+
+      const grid = document.getElementById('galleryGrid');
+      photos.forEach(function(p) {
+        const url = base + p;
+        const div = document.createElement('div');
+        div.className = 'gallery-item';
+        div.onclick = function() { openLightbox(url); };
+        div.innerHTML = '<img src="' + url + '" alt="Milena Predić"><div class="gallery-item-overlay">⊕</div>';
+        grid.appendChild(div);
+      });
+    })();
+    </script>
   </div>
   <footer>
     <span class="footer-name">Milena Predić</span>
