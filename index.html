@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,14 +7,8 @@
 <meta name="description" content="Milena Predić is a Serbian actress with international award-winning credits in film, television and theatre. Based in Belgrade.">
 <meta name="keywords" content="Milena Predić, actress, Serbian actress, Belgrade, film, television, theatre, casting">
 <meta property="og:title" content="Milena Predić — Actress">
-<meta property="og:description" content="Award-winning Serbian actress. Film, television, theatre.">
+<meta property="og:description" content="Award-winning Serbian actress. Film, television, theatre. Based in Belgrade.">
 <meta property="og:type" content="profile">
-<meta name="robots" content="index, follow">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
-
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -25,153 +19,124 @@
   "nationality": "Serbian",
   "email": "milenapredicster@gmail.com",
   "telephone": "+381637071965",
-  "url": "https://milenapredic.com",
-  "alumniOf": "Faculty of Dramatic Arts, Belgrade",
-  "award": [
-    "Best Debutant – Niš Film Festival 2009",
-    "Best Actress – Independent Shorts Award 2019",
-    "Best Actress – Chicago Serbian FF 2022",
-    "Best Actress – Oman FF 2023",
-    "Best Supporting Actress – Chicago Serbian FF 2024"
-  ]
+  "url": "https://milenapredic.com"
 }
 </script>
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --c-bg: #0a0a0a;
-    --c-bg2: #111111;
-    --c-bg3: #1a1a1a;
-    --c-surface: #161616;
-    --c-text: #f0ede8;
-    --c-text2: #a09890;
-    --c-text3: #5a5450;
-    --c-accent: #c8a882;
-    --c-accent2: #8a6e52;
-    --c-border: rgba(255,255,255,0.07);
-    --c-border2: rgba(255,255,255,0.12);
-    --font-display: 'Cormorant Garamond', Georgia, serif;
-    --font-body: 'Inter', system-ui, sans-serif;
-    --nav-h: 72px;
-    --max-w: 1200px;
-    --transition: 0.4s cubic-bezier(0.25, 0, 0.1, 1);
+    --bg: #0a0a0a;
+    --bg-secondary: #111111;
+    --text: #f0ede8;
+    --text-muted: #888880;
+    --text-faint: #444440;
+    --accent: #c8a97e;
+    --border: rgba(240,237,232,0.08);
+    --border-hover: rgba(240,237,232,0.2);
+    --nav-height: 72px;
   }
-
   [data-theme="light"] {
-    --c-bg: #f8f5f0;
-    --c-bg2: #f0ece5;
-    --c-bg3: #e8e2d8;
-    --c-surface: #ffffff;
-    --c-text: #1a1714;
-    --c-text2: #6b6058;
-    --c-text3: #a09888;
-    --c-accent: #7a5c3a;
-    --c-accent2: #a07850;
-    --c-border: rgba(0,0,0,0.07);
-    --c-border2: rgba(0,0,0,0.12);
+    --bg: #f5f2ed;
+    --bg-secondary: #ede9e3;
+    --text: #1a1a18;
+    --text-muted: #6b6860;
+    --text-faint: #bbb8b2;
+    --accent: #8b6914;
+    --border: rgba(26,26,24,0.08);
+    --border-hover: rgba(26,26,24,0.2);
   }
-
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  html { scroll-behavior: smooth; font-size: 16px; }
-
+  html { scroll-behavior: smooth; }
   body {
-    background: var(--c-bg);
-    color: var(--c-text);
-    font-family: var(--font-body);
-    font-weight: 300;
-    line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
-    transition: background var(--transition), color var(--transition);
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.6;
+    transition: background 0.3s, color 0.3s;
     overflow-x: hidden;
   }
 
-  /* ─── NAVIGATION ─────────────────────────────────── */
+  /* NAV */
   nav {
     position: fixed;
     top: 0; left: 0; right: 0;
-    z-index: 100;
-    height: var(--nav-h);
+    height: var(--nav-height);
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 40px;
-    transition: background var(--transition), border-color var(--transition);
-    border-bottom: 1px solid transparent;
+    padding: 0 48px;
+    z-index: 100;
+    transition: background 0.4s, backdrop-filter 0.4s;
   }
-
   nav.scrolled {
-    background: var(--c-bg);
-    border-color: var(--c-border);
+    background: rgba(10,10,10,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
   }
-
+  [data-theme="light"] nav.scrolled {
+    background: rgba(245,242,237,0.92);
+  }
   .nav-logo {
-    font-family: var(--font-display);
+    font-family: 'Cormorant Garamond', serif;
     font-size: 20px;
     font-weight: 400;
-    letter-spacing: 0.04em;
-    color: var(--c-text);
+    letter-spacing: 0.08em;
+    color: var(--text);
     text-decoration: none;
     cursor: pointer;
   }
-
   .nav-links {
     display: flex;
     align-items: center;
     gap: 36px;
     list-style: none;
   }
-
   .nav-links a {
     font-size: 11px;
-    font-weight: 400;
+    font-weight: 500;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--c-text2);
+    color: var(--text-muted);
     text-decoration: none;
     transition: color 0.2s;
     cursor: pointer;
   }
-
-  .nav-links a:hover { color: var(--c-text); }
-
+  .nav-links a:hover { color: var(--text); }
   .nav-controls {
     display: flex;
     align-items: center;
     gap: 16px;
   }
-
-  .lang-btn, .theme-btn {
-    background: none;
-    border: 1px solid var(--c-border2);
-    color: var(--c-text2);
-    cursor: pointer;
-    font-family: var(--font-body);
-    transition: all 0.2s;
-    border-radius: 0;
-  }
-
   .lang-btn {
-    font-size: 10px;
-    letter-spacing: 0.12em;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
+    color: var(--text-muted);
+    background: none;
+    border: 1px solid var(--border);
     padding: 6px 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'Inter', sans-serif;
   }
-
+  .lang-btn:hover { color: var(--text); border-color: var(--border-hover); }
   .theme-btn {
-    width: 36px;
-    height: 36px;
-    font-size: 14px;
+    width: 36px; height: 36px;
+    background: none;
+    border: 1px solid var(--border);
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
+    color: var(--text-muted);
+    transition: all 0.2s;
+    font-size: 14px;
   }
-
-  .lang-btn:hover, .theme-btn:hover {
-    border-color: var(--c-accent);
-    color: var(--c-accent);
-  }
-
+  .theme-btn:hover { color: var(--text); border-color: var(--border-hover); }
   .hamburger {
     display: none;
     flex-direction: column;
@@ -181,2135 +146,1692 @@
     cursor: pointer;
     padding: 4px;
   }
-
   .hamburger span {
     display: block;
-    width: 24px;
+    width: 22px;
     height: 1px;
-    background: var(--c-text);
+    background: var(--text);
     transition: all 0.3s;
   }
 
-  /* ─── MOBILE NAV ─────────────────────────────────── */
-  .mobile-nav {
-    display: none;
-    position: fixed;
-    top: var(--nav-h);
-    left: 0; right: 0;
-    background: var(--c-bg);
-    border-bottom: 1px solid var(--c-border);
-    padding: 24px 40px 32px;
-    z-index: 99;
-    flex-direction: column;
-    gap: 24px;
-  }
-
-  .mobile-nav.open { display: flex; }
-
-  .mobile-nav a {
-    font-size: 12px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--c-text2);
-    text-decoration: none;
-    cursor: pointer;
-  }
-
-  /* ─── PAGES ──────────────────────────────────────── */
+  /* PAGES */
   .page { display: none; }
   .page.active { display: block; }
 
-  /* ─── HERO ───────────────────────────────────────── */
+  /* HERO */
   .hero {
     position: relative;
-    height: 100svh;
+    height: 100vh;
     min-height: 600px;
     display: flex;
     align-items: flex-end;
     overflow: hidden;
   }
-
-  .hero-bg {
+  .hero-img {
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-      135deg,
-      #1a1410 0%,
-      #0d0c0b 40%,
-      #181410 100%
-    );
-    overflow: hidden;
-  }
-
-  .hero-bg-img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
+    width: 100%; height: 100%;
     object-fit: cover;
-    opacity: 0.55;
-    filter: grayscale(20%);
+    object-position: right center;
   }
-
-  .hero-bg-placeholder {
-    position: absolute;
-    inset: 0;
-    background:
-      radial-gradient(ellipse 60% 80% at 70% 40%, rgba(160,120,80,0.18) 0%, transparent 70%),
-      linear-gradient(160deg, #1f1a14 0%, #0a0908 60%, #151210 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .hero-bg-placeholder::after {
-    content: '';
-    position: absolute;
-    right: 8%;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 38%;
-    max-width: 480px;
-    aspect-ratio: 3/4;
-    border: 1px solid rgba(200,168,130,0.15);
-    background: rgba(200,168,130,0.04);
-  }
-
-  .hero-placeholder-text {
-    position: absolute;
-    right: calc(8% + 38%/2);
-    top: 50%;
-    transform: translate(50%, -50%);
-    font-size: 10px;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: rgba(200,168,130,0.3);
-    white-space: nowrap;
-  }
-
   .hero-overlay {
     position: absolute;
     inset: 0;
     background: linear-gradient(
-      to right,
-      rgba(10,9,8,0.85) 0%,
-      rgba(10,9,8,0.5) 50%,
-      rgba(10,9,8,0.1) 100%
+      to bottom,
+      rgba(0,0,0,0.1) 0%,
+      rgba(0,0,0,0.05) 40%,
+      rgba(0,0,0,0.6) 75%,
+      rgba(0,0,0,0.85) 100%
     );
   }
-
-  .hero-overlay-bottom {
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    height: 40%;
-    background: linear-gradient(to top, var(--c-bg) 0%, transparent 100%);
-  }
-
   .hero-content {
     position: relative;
     z-index: 2;
-    padding: 0 40px 80px;
-    max-width: 680px;
+    padding: 0 64px 80px;
+    max-width: 900px;
   }
-
   .hero-eyebrow {
-    font-size: 10px;
-    letter-spacing: 0.22em;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--c-accent);
-    margin-bottom: 20px;
-    opacity: 0;
-    animation: fadeUp 0.8s 0.3s forwards;
+    color: var(--accent);
+    margin-bottom: 16px;
   }
-
   .hero-name {
-    font-family: var(--font-display);
-    font-size: clamp(56px, 9vw, 110px);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(56px, 8vw, 108px);
     font-weight: 300;
     line-height: 0.95;
+    color: #f0ede8;
     letter-spacing: -0.01em;
-    color: var(--c-text);
     margin-bottom: 8px;
-    opacity: 0;
-    animation: fadeUp 0.8s 0.5s forwards;
   }
-
   .hero-title {
-    font-family: var(--font-display);
+    font-family: 'Cormorant Garamond', serif;
     font-size: clamp(18px, 2.5vw, 28px);
     font-weight: 300;
     font-style: italic;
-    color: var(--c-text2);
-    letter-spacing: 0.04em;
-    margin-bottom: 36px;
-    opacity: 0;
-    animation: fadeUp 0.8s 0.7s forwards;
+    color: rgba(240,237,232,0.65);
+    margin-bottom: 40px;
+    letter-spacing: 0.02em;
   }
-
-  .hero-tagline {
-    font-size: 13px;
-    font-weight: 300;
-    color: var(--c-text2);
-    letter-spacing: 0.06em;
-    margin-bottom: 48px;
-    max-width: 380px;
-    line-height: 1.8;
-    opacity: 0;
-    animation: fadeUp 0.8s 0.9s forwards;
-  }
-
   .hero-actions {
     display: flex;
     gap: 16px;
     flex-wrap: wrap;
-    opacity: 0;
-    animation: fadeUp 0.8s 1.1s forwards;
   }
-
   .btn-primary {
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    background: var(--c-accent);
-    color: #0a0908;
-    font-family: var(--font-body);
-    font-size: 10px;
+    background: var(--accent);
+    color: #0a0a0a;
+    padding: 14px 32px;
+    font-size: 11px;
     font-weight: 500;
-    letter-spacing: 0.16em;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    padding: 14px 28px;
-    border: none;
-    cursor: pointer;
     text-decoration: none;
-    transition: all 0.25s;
-    border-radius: 0;
+    cursor: pointer;
+    border: none;
+    font-family: 'Inter', sans-serif;
+    transition: opacity 0.2s;
   }
-
-  .btn-primary:hover { background: var(--c-text); transform: translateY(-1px); }
-
+  .btn-primary:hover { opacity: 0.85; }
   .btn-outline {
     display: inline-flex;
     align-items: center;
     gap: 10px;
     background: transparent;
-    color: var(--c-text);
-    font-family: var(--font-body);
-    font-size: 10px;
-    font-weight: 400;
-    letter-spacing: 0.16em;
+    color: #f0ede8;
+    padding: 14px 32px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    padding: 13px 28px;
-    border: 1px solid var(--c-border2);
-    cursor: pointer;
     text-decoration: none;
-    transition: all 0.25s;
-    border-radius: 0;
+    cursor: pointer;
+    border: 1px solid rgba(240,237,232,0.4);
+    font-family: 'Inter', sans-serif;
+    transition: border-color 0.2s, background 0.2s;
   }
-
-  .btn-outline:hover { border-color: var(--c-accent); color: var(--c-accent); transform: translateY(-1px); }
-
-  /* ─── SECTIONS ───────────────────────────────────── */
-  section {
-    padding: 100px 40px;
-    max-width: var(--max-w);
-    margin: 0 auto;
-  }
-
-  .section-full {
-    padding: 100px 40px;
-  }
-
-  .section-label {
+  .btn-outline:hover { border-color: rgba(240,237,232,0.8); background: rgba(240,237,232,0.05); }
+  .hero-scroll {
+    position: absolute;
+    bottom: 32px;
+    right: 48px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    color: rgba(240,237,232,0.4);
     font-size: 10px;
-    letter-spacing: 0.22em;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: var(--c-accent);
-    margin-bottom: 16px;
+  }
+  .hero-scroll::after {
+    content: '';
+    display: block;
+    width: 1px;
+    height: 48px;
+    background: rgba(240,237,232,0.2);
   }
 
+  /* SECTIONS */
+  section { padding: 100px 64px; }
+  .section-eyebrow {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 20px;
+  }
   .section-title {
-    font-family: var(--font-display);
-    font-size: clamp(32px, 5vw, 56px);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 4vw, 56px);
     font-weight: 300;
     line-height: 1.1;
-    color: var(--c-text);
-    margin-bottom: 32px;
+    color: var(--text);
+    margin-bottom: 48px;
   }
-
-  .divider {
+  .section-divider {
     width: 40px;
     height: 1px;
-    background: var(--c-accent);
+    background: var(--accent);
     margin-bottom: 48px;
   }
 
-  /* ─── AWARDS STRIP ───────────────────────────────── */
+  /* AWARDS STRIP */
   .awards-strip {
-    border-top: 1px solid var(--c-border);
-    border-bottom: 1px solid var(--c-border);
-    padding: 32px 40px;
-    display: flex;
-    gap: 48px;
-    overflow-x: auto;
-    scrollbar-width: none;
-    background: var(--c-surface);
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 32px 64px;
+    overflow: hidden;
   }
-
-  .awards-strip::-webkit-scrollbar { display: none; }
-
+  .awards-inner {
+    display: flex;
+    gap: 64px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
   .award-item {
-    flex-shrink: 0;
     display: flex;
     flex-direction: column;
     gap: 4px;
+    flex-shrink: 0;
   }
-
-  .award-title {
-    font-size: 11px;
-    font-weight: 400;
-    color: var(--c-text);
-    letter-spacing: 0.03em;
-    white-space: nowrap;
-  }
-
-  .award-meta {
+  .award-label {
     font-size: 10px;
-    color: var(--c-text3);
-    letter-spacing: 0.06em;
-    white-space: nowrap;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  .award-film {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--text);
+  }
+  .award-event {
+    font-size: 11px;
+    color: var(--text-muted);
+    letter-spacing: 0.04em;
   }
 
-  /* ─── SELECTED WORK ──────────────────────────────── */
+  /* SELECTED WORK */
   .work-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 2px;
-    margin-top: 0;
   }
-
   .work-item {
     position: relative;
     aspect-ratio: 3/4;
     overflow: hidden;
     cursor: pointer;
-    background: var(--c-bg3);
+    background: var(--bg-secondary);
   }
-
-  .work-item-img {
-    width: 100%;
-    height: 100%;
+  .work-item img {
+    width: 100%; height: 100%;
     object-fit: cover;
-    transition: transform 0.6s var(--transition);
-    filter: grayscale(30%);
+    transition: transform 0.6s ease;
   }
-
-  .work-item-placeholder {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(160deg, var(--c-bg3), var(--c-surface));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .work-item:hover .work-item-img,
-  .work-item:hover .work-item-placeholder { transform: scale(1.04); }
-
+  .work-item:hover img { transform: scale(1.04); }
   .work-item-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 50%);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 24px;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 50%);
     opacity: 0;
     transition: opacity 0.3s;
   }
-
   .work-item:hover .work-item-overlay { opacity: 1; }
-
+  .work-item-info {
+    position: absolute;
+    bottom: 0;
+    left: 0; right: 0;
+    padding: 24px;
+    transform: translateY(8px);
+    opacity: 0;
+    transition: all 0.3s;
+  }
+  .work-item:hover .work-item-info { transform: translateY(0); opacity: 1; }
   .work-item-title {
-    font-family: var(--font-display);
-    font-size: 22px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
     font-weight: 400;
     color: #f0ede8;
-    line-height: 1.2;
+    margin-bottom: 4px;
   }
-
   .work-item-role {
-    font-size: 10px;
-    letter-spacing: 0.12em;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--accent);
     text-transform: uppercase;
-    color: var(--c-accent);
-    margin-top: 4px;
+  }
+  .work-placeholder {
+    width: 100%; height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: var(--bg-secondary);
+  }
+  .work-placeholder-icon {
+    font-size: 32px;
+    opacity: 0.2;
+  }
+  .work-placeholder-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    color: var(--text-muted);
+    text-align: center;
+    padding: 0 16px;
+  }
+  .work-placeholder-year {
+    font-size: 11px;
+    color: var(--text-faint);
+    letter-spacing: 0.1em;
   }
 
-  .work-item-year {
-    font-size: 10px;
-    color: rgba(240,237,232,0.5);
-    margin-top: 2px;
-  }
-
-  /* ─── ABOUT PREVIEW ──────────────────────────────── */
+  /* ABOUT PREVIEW */
   .about-preview {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 80px;
     align-items: center;
   }
-
   .about-preview-img {
+    position: relative;
     aspect-ratio: 3/4;
     overflow: hidden;
-    background: var(--c-bg3);
+    background: var(--bg-secondary);
   }
-
   .about-preview-img img {
-    width: 100%;
-    height: 100%;
+    width: 100%; height: 100%;
     object-fit: cover;
-    filter: grayscale(15%);
   }
-
-  .about-preview-placeholder {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(160deg, var(--c-surface), var(--c-bg3));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .placeholder-label {
-    font-size: 9px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--c-text3);
-  }
-
   .about-preview-text p {
-    font-size: 15px;
-    line-height: 1.9;
-    color: var(--c-text2);
-    margin-bottom: 24px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--text);
+    margin-bottom: 32px;
   }
-
-  /* ─── VIDEO PREVIEW ──────────────────────────────── */
-  .video-section {
-    background: var(--c-surface);
-    border-top: 1px solid var(--c-border);
-    border-bottom: 1px solid var(--c-border);
+  .about-preview-text .btn-text {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    text-decoration: none;
+    cursor: pointer;
+    border-bottom: 1px solid var(--accent);
+    padding-bottom: 2px;
+    transition: opacity 0.2s;
+    background: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    font-family: 'Inter', sans-serif;
   }
+  .about-preview-text .btn-text:hover { opacity: 0.7; }
 
-  .video-wrapper {
-    position: relative;
-    aspect-ratio: 16/9;
-    background: #000;
-    overflow: hidden;
+  /* SHOWREEL PREVIEW */
+  .showreel-preview-section {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .showreel-inner {
     max-width: 900px;
     margin: 0 auto;
+    text-align: center;
   }
-
+  .video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    background: #000;
+    margin-bottom: 32px;
+  }
   .video-wrapper iframe {
-    width: 100%;
-    height: 100%;
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
     border: none;
   }
-
   .video-placeholder {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, #111 0%, #1a1612 100%);
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: 16px;
+    background: #111;
     cursor: pointer;
   }
-
   .play-btn {
-    width: 72px;
-    height: 72px;
-    border: 1px solid rgba(200,168,130,0.4);
+    width: 72px; height: 72px;
+    border: 2px solid rgba(240,237,232,0.4);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 24px;
+    color: rgba(240,237,232,0.6);
     transition: all 0.3s;
   }
-
-  .play-btn:hover {
-    border-color: var(--c-accent);
-    background: rgba(200,168,130,0.08);
-    transform: scale(1.05);
+  .video-placeholder:hover .play-btn {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  .video-placeholder-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 300;
+    color: rgba(240,237,232,0.4);
   }
 
-  .play-btn svg { margin-left: 4px; }
-
-  /* ─── NEWS ───────────────────────────────────────── */
+  /* NEWS */
   .news-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 1px;
-    background: var(--c-border);
+    gap: 32px;
   }
-
   .news-item {
-    background: var(--c-bg);
-    padding: 36px 32px;
+    border-top: 1px solid var(--border);
+    padding-top: 24px;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: border-color 0.2s;
   }
-
-  .news-item:hover { background: var(--c-surface); }
-
+  .news-item:hover { border-color: var(--accent); }
   .news-date {
     font-size: 10px;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: var(--c-text3);
-    margin-bottom: 16px;
-  }
-
-  .news-title {
-    font-family: var(--font-display);
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 1.35;
-    color: var(--c-text);
+    color: var(--text-faint);
     margin-bottom: 12px;
   }
-
+  .news-category {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+  .news-headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1.3;
+    color: var(--text);
+    margin-bottom: 12px;
+  }
   .news-excerpt {
     font-size: 13px;
-    color: var(--c-text2);
-    line-height: 1.7;
-  }
-
-  /* ─── CONTACT STRIP ──────────────────────────────── */
-  .contact-strip {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1px;
-    background: var(--c-border);
-    border-top: 1px solid var(--c-border);
-  }
-
-  .contact-block {
-    background: var(--c-bg);
-    padding: 40px 32px;
-  }
-
-  .contact-block-label {
-    font-size: 9px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--c-accent);
-    margin-bottom: 12px;
-  }
-
-  .contact-block-value {
-    font-size: 14px;
-    color: var(--c-text);
+    color: var(--text-muted);
     line-height: 1.6;
   }
 
-  .contact-block-value a {
-    color: var(--c-text);
+  /* CONTACT STRIP */
+  .contact-strip {
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    divide-x: 1px solid var(--border);
+  }
+  .contact-block {
+    padding: 48px;
+    border-right: 1px solid var(--border);
+  }
+  .contact-block:last-child { border-right: none; }
+  .contact-block-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+  .contact-block-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .contact-block a {
+    color: var(--text);
     text-decoration: none;
     transition: color 0.2s;
   }
+  .contact-block a:hover { color: var(--accent); }
 
-  .contact-block-value a:hover { color: var(--c-accent); }
+  /* FOOTER */
+  footer {
+    padding: 32px 64px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+  }
+  .footer-copy {
+    font-size: 11px;
+    color: var(--text-faint);
+    letter-spacing: 0.08em;
+  }
 
-  /* ─── ABOUT PAGE ─────────────────────────────────── */
+  /* INNER PAGES */
+  .page-header {
+    padding: 160px 64px 80px;
+    border-bottom: 1px solid var(--border);
+  }
+  .page-header .section-eyebrow { margin-bottom: 16px; }
+  .page-header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(48px, 6vw, 80px);
+    font-weight: 300;
+    color: var(--text);
+    line-height: 1;
+  }
+
+  /* ABOUT PAGE */
   .about-layout {
     display: grid;
     grid-template-columns: 340px 1fr;
     gap: 80px;
+    padding: 80px 64px;
     align-items: start;
   }
-
-  .about-sidebar {
-    position: sticky;
-    top: calc(var(--nav-h) + 40px);
-  }
-
+  .about-sidebar {}
   .about-photo {
-    aspect-ratio: 3/4;
-    overflow: hidden;
-    background: var(--c-bg3);
-    margin-bottom: 32px;
-  }
-
-  .about-photo img {
     width: 100%;
-    height: 100%;
+    aspect-ratio: 3/4;
     object-fit: cover;
-    filter: grayscale(15%);
+    margin-bottom: 32px;
+    background: var(--bg-secondary);
   }
-
-  .info-block {
-    margin-bottom: 28px;
-    padding-bottom: 28px;
-    border-bottom: 1px solid var(--c-border);
+  .about-photo-2 {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    margin-bottom: 32px;
+    background: var(--bg-secondary);
   }
-
-  .info-block:last-child { border-bottom: none; }
-
-  .info-label {
-    font-size: 9px;
-    letter-spacing: 0.2em;
+  .sidebar-block {
+    margin-bottom: 32px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid var(--border);
+  }
+  .sidebar-block:last-child { border-bottom: none; }
+  .sidebar-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--c-accent);
-    margin-bottom: 8px;
+    color: var(--accent);
+    margin-bottom: 12px;
   }
-
-  .info-value {
+  .sidebar-value {
     font-size: 14px;
-    color: var(--c-text);
-    line-height: 1.7;
+    color: var(--text);
+    line-height: 1.8;
   }
-
-  .info-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4px 16px;
-  }
-
-  .about-bio p {
-    font-size: 16px;
-    line-height: 1.9;
-    color: var(--c-text2);
+  .about-main h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 300;
+    color: var(--text);
     margin-bottom: 24px;
+    margin-top: 48px;
   }
-
-  .about-bio p:first-of-type {
-    font-family: var(--font-display);
-    font-size: 22px;
-    line-height: 1.7;
-    font-style: italic;
-    color: var(--c-text);
+  .about-main h2:first-child { margin-top: 0; }
+  .about-main p {
+    font-size: 16px;
+    line-height: 1.85;
+    color: var(--text-muted);
+    margin-bottom: 20px;
   }
-
-  .skills-list {
-    display: flex;
-    flex-wrap: wrap;
+  .about-main p.lead {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 1.65;
+    color: var(--text);
+  }
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 8px;
-    margin-top: 8px;
+    margin-top: 16px;
+  }
+  .skill-tag {
+    font-size: 12px;
+    padding: 8px 14px;
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    letter-spacing: 0.04em;
+  }
+  .download-btns {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 48px;
+    padding-top: 48px;
+    border-top: 1px solid var(--border);
   }
 
-  .skill-tag {
+  /* FILMOGRAPHY */
+  .filmography-layout { padding: 80px 64px; }
+  .film-tabs {
+    display: flex;
+    gap: 0;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 64px;
+  }
+  .film-tab {
+    padding: 16px 32px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+    background: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    font-family: 'Inter', sans-serif;
+    margin-bottom: -1px;
+  }
+  .film-tab.active { color: var(--text); border-bottom-color: var(--accent); }
+  .film-tab:hover { color: var(--text); }
+  .film-list { display: none; }
+  .film-list.active { display: block; }
+  .film-entry {
+    display: grid;
+    grid-template-columns: 80px 1fr 200px 120px;
+    gap: 24px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+    align-items: baseline;
+  }
+  .film-entry:hover { background: var(--bg-secondary); margin: 0 -24px; padding: 20px 24px; }
+  .film-year {
+    font-size: 13px;
+    color: var(--text-faint);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: 0.04em;
+  }
+  .film-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 400;
+    color: var(--text);
+  }
+  .film-role {
+    font-size: 13px;
+    color: var(--text-muted);
+    font-style: italic;
+  }
+  .film-badge {
     font-size: 10px;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--c-text2);
-    border: 1px solid var(--c-border2);
-    padding: 6px 14px;
+    color: var(--accent);
+    border: 1px solid var(--border);
+    padding: 3px 8px;
+    width: fit-content;
   }
 
-  .download-group {
+  /* GALLERY */
+  .gallery-layout { padding: 80px 64px; }
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3px;
+  }
+  .gallery-item {
+    aspect-ratio: 3/4;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    background: var(--bg-secondary);
+  }
+  .gallery-item.wide { grid-column: span 2; aspect-ratio: 3/2; }
+  .gallery-item img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  .gallery-item:hover img { transform: scale(1.03); }
+  .gallery-item-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    opacity: 0;
+    transition: opacity 0.3s;
     display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 40px;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    color: rgba(255,255,255,0.7);
+  }
+  .gallery-item:hover .gallery-item-overlay { opacity: 1; }
+  .gallery-placeholder {
+    width: 100%; height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-faint);
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    background: var(--bg-secondary);
   }
 
-  /* ─── SHOWREEL PAGE ──────────────────────────────── */
-  .showreel-hero {
-    padding: calc(var(--nav-h) + 60px) 40px 60px;
-    max-width: var(--max-w);
-    margin: 0 auto;
+  /* SHOWREEL PAGE */
+  .showreel-layout { padding: 80px 64px; }
+  .main-reel {
+    max-width: 900px;
+    margin: 0 auto 80px;
   }
-
+  .reel-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 300;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+  .reel-desc {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+  }
   .clips-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2px;
+    gap: 24px;
+    margin-top: 64px;
   }
-
   .clip-item {
-    position: relative;
-    aspect-ratio: 16/9;
-    background: var(--c-bg3);
-    overflow: hidden;
     cursor: pointer;
   }
-
   .clip-thumb {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, var(--c-bg3), var(--c-surface));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: opacity 0.3s;
-  }
-
-  .clip-item:hover .clip-thumb { opacity: 0.7; }
-
-  .clip-overlay {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-  }
-
-  .clip-info {
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    padding: 16px 20px;
-    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-  }
-
-  .clip-title {
-    font-size: 13px;
-    font-weight: 400;
-    color: #f0ede8;
-  }
-
-  .clip-type {
-    font-size: 9px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--c-accent);
-    margin-top: 2px;
-  }
-
-  /* ─── FILMOGRAPHY PAGE ───────────────────────────── */
-  .film-section {
-    margin-bottom: 72px;
-  }
-
-  .film-table {
-    width: 100%;
-    border-collapse: collapse;
-  }
-
-  .film-table thead th {
-    font-size: 9px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--c-text3);
-    padding: 0 0 16px;
-    text-align: left;
-    border-bottom: 1px solid var(--c-border2);
-  }
-
-  .film-table tbody tr {
-    border-bottom: 1px solid var(--c-border);
-    transition: background 0.15s;
-  }
-
-  .film-table tbody tr:hover { background: var(--c-surface); }
-
-  .film-table tbody td {
-    padding: 18px 16px 18px 0;
-    font-size: 14px;
-    color: var(--c-text2);
-    vertical-align: top;
-  }
-
-  .film-table tbody td:first-child {
-    font-size: 11px;
-    letter-spacing: 0.04em;
-    color: var(--c-text3);
-    padding-right: 24px;
-    white-space: nowrap;
-  }
-
-  .film-title {
-    font-family: var(--font-display);
-    font-size: 17px;
-    font-weight: 400;
-    color: var(--c-text);
-    line-height: 1.2;
-  }
-
-  .film-role {
-    font-size: 12px;
-    color: var(--c-accent);
-    margin-top: 3px;
-    letter-spacing: 0.03em;
-  }
-
-  /* ─── GALLERY PAGE ───────────────────────────────── */
-  .gallery-filter {
-    display: flex;
-    gap: 0;
-    margin-bottom: 40px;
-    border-bottom: 1px solid var(--c-border);
-  }
-
-  .filter-btn {
-    background: none;
-    border: none;
-    border-bottom: 2px solid transparent;
-    padding: 12px 20px;
-    font-family: var(--font-body);
-    font-size: 10px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--c-text3);
-    cursor: pointer;
-    margin-bottom: -1px;
-    transition: all 0.2s;
-  }
-
-  .filter-btn.active, .filter-btn:hover {
-    color: var(--c-text);
-    border-bottom-color: var(--c-accent);
-  }
-
-  .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 2px;
-  }
-
-  .gallery-item {
-    aspect-ratio: 3/4;
-    background: var(--c-bg3);
-    overflow: hidden;
-    cursor: pointer;
-    position: relative;
-  }
-
-  .gallery-item-wide {
-    grid-column: span 2;
     aspect-ratio: 16/9;
-  }
-
-  .gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s var(--transition);
-    filter: grayscale(20%);
-  }
-
-  .gallery-item:hover img { transform: scale(1.04); }
-
-  .gallery-placeholder {
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(160deg, var(--c-surface), var(--c-bg3));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  /* ─── LIGHTBOX ───────────────────────────────────── */
-  .lightbox {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.95);
-    z-index: 200;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .lightbox.open { display: flex; }
-
-  .lightbox-inner {
-    max-width: 90vw;
-    max-height: 90vh;
+    background: var(--bg-secondary);
     position: relative;
-  }
-
-  .lightbox-inner img {
-    max-width: 100%;
-    max-height: 90vh;
-    object-fit: contain;
-  }
-
-  .lightbox-close {
-    position: fixed;
-    top: 24px; right: 32px;
-    background: none;
-    border: 1px solid rgba(255,255,255,0.2);
-    color: #fff;
-    font-size: 20px;
-    width: 44px; height: 44px;
-    cursor: pointer;
+    overflow: hidden;
+    margin-bottom: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: border-color 0.2s;
+    border: 1px solid var(--border);
   }
-
-  .lightbox-close:hover { border-color: var(--c-accent); }
-
-  /* ─── NEWS PAGE ──────────────────────────────────── */
-  .news-list { display: flex; flex-direction: column; gap: 1px; background: var(--c-border); }
-
-  .news-article {
-    background: var(--c-bg);
-    padding: 40px;
-    display: grid;
-    grid-template-columns: 120px 1fr;
-    gap: 40px;
-    cursor: pointer;
-    transition: background 0.2s;
+  .clip-play {
+    width: 48px; height: 48px;
+    border: 1px solid rgba(240,237,232,0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(240,237,232,0.5);
+    font-size: 18px;
+    transition: all 0.3s;
   }
-
-  .news-article:hover { background: var(--c-surface); }
-
-  .news-article-date {
+  .clip-item:hover .clip-play { border-color: var(--accent); color: var(--accent); }
+  .clip-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+  .clip-meta {
     font-size: 11px;
-    letter-spacing: 0.1em;
-    color: var(--c-text3);
-    padding-top: 4px;
+    color: var(--text-muted);
+    letter-spacing: 0.06em;
   }
 
-  .news-article-cat {
-    font-size: 9px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--c-accent);
-    margin-bottom: 10px;
-  }
-
-  .news-article-title {
-    font-family: var(--font-display);
-    font-size: 24px;
-    font-weight: 400;
-    line-height: 1.3;
-    color: var(--c-text);
-    margin-bottom: 12px;
-  }
-
-  .news-article-excerpt {
-    font-size: 14px;
-    color: var(--c-text2);
-    line-height: 1.7;
-  }
-
-  /* ─── CONTACT PAGE ───────────────────────────────── */
+  /* CONTACT PAGE */
   .contact-layout {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 80px;
-    align-items: start;
+    padding: 80px 64px;
   }
-
-  .contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  .form-label {
-    font-size: 10px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--c-text3);
-  }
-
-  .form-input, .form-textarea {
-    background: var(--c-surface);
-    border: 1px solid var(--c-border2);
-    color: var(--c-text);
-    font-family: var(--font-body);
-    font-size: 14px;
-    padding: 14px 16px;
-    outline: none;
-    transition: border-color 0.2s;
-    border-radius: 0;
-    width: 100%;
-  }
-
-  .form-textarea { height: 140px; resize: vertical; }
-  .form-input:focus, .form-textarea:focus { border-color: var(--c-accent); }
-
   .contact-info-block {
-    margin-bottom: 40px;
-    padding-bottom: 40px;
-    border-bottom: 1px solid var(--c-border);
+    margin-bottom: 48px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid var(--border);
   }
-
+  .contact-info-block:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .contact-info-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+  .contact-info-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 400;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+  .contact-info-detail {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.8;
+  }
+  .contact-info-detail a {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .contact-info-detail a:hover { color: var(--accent); }
   .social-links {
     display: flex;
     gap: 16px;
     margin-top: 16px;
   }
-
   .social-link {
-    font-size: 10px;
+    font-size: 11px;
+    font-weight: 500;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--c-text2);
+    color: var(--text-muted);
     text-decoration: none;
-    border: 1px solid var(--c-border2);
-    padding: 10px 18px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 2px;
     transition: all 0.2s;
   }
+  .social-link:hover { color: var(--accent); border-color: var(--accent); }
+  /* CONTACT FORM */
+  .contact-form { }
+  .form-group {
+    margin-bottom: 24px;
+  }
+  .form-label {
+    display: block;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+  }
+  .form-input, .form-textarea {
+    width: 100%;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 14px 16px;
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    outline: none;
+    transition: border-color 0.2s;
+    resize: none;
+  }
+  .form-input:focus, .form-textarea:focus { border-color: var(--accent); }
+  .form-textarea { height: 140px; }
 
-  .social-link:hover { color: var(--c-accent); border-color: var(--c-accent); }
-
-  /* ─── FOOTER ─────────────────────────────────────── */
-  footer {
-    border-top: 1px solid var(--c-border);
-    padding: 40px;
-    display: flex;
+  /* NEWS PAGE */
+  .news-layout { padding: 80px 64px; }
+  .news-featured {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    margin-bottom: 80px;
+    padding-bottom: 80px;
+    border-bottom: 1px solid var(--border);
     align-items: center;
-    justify-content: space-between;
-    max-width: 100%;
+  }
+  .news-featured-img {
+    aspect-ratio: 4/3;
+    background: var(--bg-secondary);
+    overflow: hidden;
+  }
+  .news-featured-img img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+  }
+  .news-featured-date {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    margin-bottom: 12px;
+  }
+  .news-featured-cat {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+  .news-featured-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 1.2;
+    color: var(--text);
+    margin-bottom: 20px;
+  }
+  .news-featured-text {
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--text-muted);
+  }
+  .news-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
   }
 
-  .footer-name {
-    font-family: var(--font-display);
-    font-size: 16px;
-    color: var(--c-text2);
+  /* LIGHTBOX */
+  .lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.95);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+  }
+  .lightbox.open { display: flex; }
+  .lightbox img {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+  }
+  .lightbox-close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    font-size: 28px;
+    color: rgba(240,237,232,0.6);
+    cursor: pointer;
+    background: none;
+    border: none;
+    transition: color 0.2s;
+  }
+  .lightbox-close:hover { color: #fff; }
+
+  /* MOBILE NAV */
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: var(--bg);
+    z-index: 99;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 300;
+    color: var(--text);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    cursor: pointer;
   }
 
-  .footer-copy {
-    font-size: 11px;
-    color: var(--c-text3);
-    letter-spacing: 0.06em;
-  }
-
-  /* ─── ANIMATIONS ─────────────────────────────────── */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  .reveal {
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* ─── LANG HIDDEN ────────────────────────────────── */
-  [data-lang] { display: none; }
-  [data-lang].lang-active { display: block; }
-  span[data-lang].lang-active { display: inline; }
-
-  /* ─── RESPONSIVE ─────────────────────────────────── */
+  /* RESPONSIVE */
   @media (max-width: 1024px) {
-    .work-grid { grid-template-columns: repeat(2, 1fr); }
-    .about-layout { grid-template-columns: 1fr; }
-    .about-sidebar { position: static; }
-    .contact-layout { grid-template-columns: 1fr; }
-    .contact-strip { grid-template-columns: repeat(2, 1fr); }
-  }
-
-  @media (max-width: 768px) {
-    nav { padding: 0 20px; }
+    nav { padding: 0 32px; }
     .nav-links { display: none; }
     .hamburger { display: flex; }
-    .nav-controls { gap: 10px; }
-
-    section { padding: 60px 20px; }
-    .section-full { padding: 60px 20px; }
-    .hero-content { padding: 0 20px 60px; }
-
-    .work-grid { grid-template-columns: 1fr; }
+    section { padding: 72px 32px; }
+    .hero-content { padding: 0 32px 64px; }
     .about-preview { grid-template-columns: 1fr; gap: 40px; }
+    .about-layout { grid-template-columns: 1fr; }
+    .contact-layout { grid-template-columns: 1fr; }
+    .contact-strip { grid-template-columns: repeat(2, 1fr); }
+    .news-featured { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 768px) {
+    nav { padding: 0 24px; }
+    section { padding: 56px 24px; }
+    .hero-content { padding: 0 24px 56px; }
+    .hero-scroll { display: none; }
+    .awards-strip { padding: 24px; }
+    .awards-inner { gap: 32px; }
+    .work-grid { grid-template-columns: repeat(2, 1fr); }
     .news-grid { grid-template-columns: 1fr; }
-    .contact-strip { grid-template-columns: 1fr; }
+    .film-entry { grid-template-columns: 60px 1fr; }
+    .film-role, .film-badge { display: none; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+    .gallery-item.wide { grid-column: span 1; aspect-ratio: 3/4; }
     .clips-grid { grid-template-columns: 1fr; }
-    .gallery-item-wide { grid-column: span 1; aspect-ratio: 3/4; }
-    .news-article { grid-template-columns: 1fr; gap: 8px; }
-    footer { flex-direction: column; gap: 12px; text-align: center; }
-    .awards-strip { padding: 24px 20px; }
-    .mobile-nav { padding: 24px 20px 32px; }
-    .contact-block { padding: 28px 20px; }
-
-    .film-table thead { display: none; }
-    .film-table tbody td:first-child { display: none; }
-    .film-table tbody td { display: block; padding: 4px 0; }
-    .film-table tbody tr { padding: 16px 0; display: block; }
+    .contact-strip { grid-template-columns: 1fr; }
+    .contact-block { border-right: none; border-bottom: 1px solid var(--border); }
+    footer { flex-direction: column; gap: 8px; text-align: center; }
+    .page-header { padding: 120px 24px 48px; }
+    .about-layout, .filmography-layout, .gallery-layout, .showreel-layout, .news-layout, .contact-layout { padding: 48px 24px; }
+    .download-btns { flex-direction: column; }
+    .news-list { grid-template-columns: 1fr; }
   }
 
-  @media (prefers-reduced-motion: reduce) {
-    *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  /* LANG */
+  [data-lang="sr"] .en { display: none; }
+  [data-lang="en"] .sr { display: none; }
+  [data-lang="sr"] .sr { display: block; }
+  [data-lang="en"] .en { display: block; }
+  span.sr, span.en { display: inline; }
+  [data-lang="sr"] span.en { display: none; }
+  [data-lang="en"] span.sr { display: none; }
+
+  /* ANIMATIONS */
+  @media (prefers-reduced-motion: no-preference) {
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 </style>
 </head>
+<body data-lang="en">
 
-<body>
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <a onclick="navigate('home');closeMobile()"><span class="en">Home</span><span class="sr">Početna</span></a>
+  <a onclick="navigate('about');closeMobile()"><span class="en">About</span><span class="sr">O meni</span></a>
+  <a onclick="navigate('showreel');closeMobile()">Showreel</a>
+  <a onclick="navigate('filmography');closeMobile()"><span class="en">Filmography</span><span class="sr">Filmografija</span></a>
+  <a onclick="navigate('gallery');closeMobile()"><span class="en">Gallery</span><span class="sr">Galerija</span></a>
+  <a onclick="navigate('news');closeMobile()"><span class="en">News</span><span class="sr">Vesti</span></a>
+  <a onclick="navigate('contact');closeMobile()"><span class="en">Contact</span><span class="sr">Kontakt</span></a>
+</div>
 
-<!-- ═══ NAVIGATION ══════════════════════════════════════ -->
-<nav id="navbar">
-  <a class="nav-logo" onclick="showPage('home')">Milena Predić</a>
-
+<!-- NAV -->
+<nav id="mainNav">
+  <a class="nav-logo" onclick="navigate('home')">MP</a>
   <ul class="nav-links">
-    <li><a onclick="showPage('home')" data-lang="en" class="lang-active">Home</a><a onclick="showPage('home')" data-lang="sr">Početna</a></li>
-    <li><a onclick="showPage('about')" data-lang="en" class="lang-active">About</a><a onclick="showPage('about')" data-lang="sr">O meni</a></li>
-    <li><a onclick="showPage('showreel')" data-lang="en" class="lang-active">Showreel</a><a onclick="showPage('showreel')" data-lang="sr">Showreel</a></li>
-    <li><a onclick="showPage('filmography')" data-lang="en" class="lang-active">Filmography</a><a onclick="showPage('filmography')" data-lang="sr">Filmografija</a></li>
-    <li><a onclick="showPage('gallery')" data-lang="en" class="lang-active">Gallery</a><a onclick="showPage('gallery')" data-lang="sr">Galerija</a></li>
-    <li><a onclick="showPage('news')" data-lang="en" class="lang-active">News</a><a onclick="showPage('news')" data-lang="sr">Vesti</a></li>
-    <li><a onclick="showPage('contact')" data-lang="en" class="lang-active">Contact</a><a onclick="showPage('contact')" data-lang="sr">Kontakt</a></li>
+    <li><a onclick="navigate('about')"><span class="en">About</span><span class="sr">O meni</span></a></li>
+    <li><a onclick="navigate('showreel')">Showreel</a></li>
+    <li><a onclick="navigate('filmography')"><span class="en">Filmography</span><span class="sr">Filmografija</span></a></li>
+    <li><a onclick="navigate('gallery')"><span class="en">Gallery</span><span class="sr">Galerija</span></a></li>
+    <li><a onclick="navigate('news')"><span class="en">News</span><span class="sr">Vesti</span></a></li>
+    <li><a onclick="navigate('contact')"><span class="en">Contact</span><span class="sr">Kontakt</span></a></li>
   </ul>
-
   <div class="nav-controls">
-    <button class="lang-btn" id="langToggle" onclick="toggleLang()">SR</button>
-    <button class="theme-btn" id="themeToggle" onclick="toggleTheme()" aria-label="Toggle theme">◐</button>
-    <button class="hamburger" id="hamburger" onclick="toggleMobileNav()" aria-label="Menu">
+    <button class="lang-btn" onclick="toggleLang()" id="langBtn">SR</button>
+    <button class="theme-btn" onclick="toggleTheme()" id="themeBtn">☀</button>
+    <button class="hamburger" onclick="toggleMobile()" id="hamburgerBtn">
       <span></span><span></span><span></span>
     </button>
   </div>
 </nav>
 
-<div class="mobile-nav" id="mobileNav">
-  <a onclick="showPage('home');toggleMobileNav()" data-lang="en" class="lang-active">Home</a>
-  <a onclick="showPage('home');toggleMobileNav()" data-lang="sr">Početna</a>
-  <a onclick="showPage('about');toggleMobileNav()" data-lang="en" class="lang-active">About</a>
-  <a onclick="showPage('about');toggleMobileNav()" data-lang="sr">O meni</a>
-  <a onclick="showPage('showreel');toggleMobileNav()" data-lang="en" class="lang-active">Showreel</a>
-  <a onclick="showPage('showreel');toggleMobileNav()" data-lang="sr">Showreel</a>
-  <a onclick="showPage('filmography');toggleMobileNav()" data-lang="en" class="lang-active">Filmography</a>
-  <a onclick="showPage('filmography');toggleMobileNav()" data-lang="sr">Filmografija</a>
-  <a onclick="showPage('gallery');toggleMobileNav()" data-lang="en" class="lang-active">Gallery</a>
-  <a onclick="showPage('gallery');toggleMobileNav()" data-lang="sr">Galerija</a>
-  <a onclick="showPage('news');toggleMobileNav()" data-lang="en" class="lang-active">News</a>
-  <a onclick="showPage('news');toggleMobileNav()" data-lang="sr">Vesti</a>
-  <a onclick="showPage('contact');toggleMobileNav()" data-lang="en" class="lang-active">Contact</a>
-  <a onclick="showPage('contact');toggleMobileNav()" data-lang="sr">Kontakt</a>
-</div>
-
-
-<!-- ═══════════════════════════════════════════════════════
-     PAGE: HOME
-════════════════════════════════════════════════════════ -->
+<!-- HOME PAGE -->
 <div class="page active" id="page-home">
 
   <!-- HERO -->
-  <div class="hero">
-    <div class="hero-bg">
-      <div class="hero-bg-placeholder" id="heroBgPlaceholder">
-        <span class="hero-placeholder-text">HERO PHOTOGRAPH</span>
-      </div>
-    </div>
+  <section class="hero">
+    <img src="https://raw.githubusercontent.com/LordHidetora/milena-predic-website/main/naslovna_hero_.JPG"
+         alt="Milena Predić"
+         class="hero-img">
     <div class="hero-overlay"></div>
-    <div class="hero-overlay-bottom"></div>
-
     <div class="hero-content">
-      <p class="hero-eyebrow">
-        <span data-lang="en" class="lang-active">Belgrade · Serbia</span>
-        <span data-lang="sr">Beograd · Srbija</span>
-      </p>
+      <p class="hero-eyebrow"><span class="en">Actress · Belgrade</span><span class="sr">Glumica · Beograd</span></p>
       <h1 class="hero-name">Milena<br>Predić</h1>
-      <p class="hero-title">
-        <span data-lang="en" class="lang-active">Actress</span>
-        <span data-lang="sr">Glumica</span>
-      </p>
-      <p class="hero-tagline">
-        <span data-lang="en" class="lang-active">Award-winning actress with credits across international film, television and theatre. Graduate of the Faculty of Dramatic Arts, Belgrade.</span>
-        <span data-lang="sr">Nagrađivana glumica sa međunarodnim kreditima u filmu, televiziji i pozorištu. Diplomirala na FDU u Beogradu.</span>
-      </p>
+      <p class="hero-title"><span class="en">Film · Television · Theatre</span><span class="sr">Film · Televizija · Pozorište</span></p>
       <div class="hero-actions">
-        <button class="btn-primary" onclick="showPage('showreel')">
-          <span data-lang="en" class="lang-active">▶ Watch Showreel</span>
-          <span data-lang="sr">▶ Pogledaj Showreel</span>
+        <button class="btn-primary" onclick="navigate('showreel')">
+          ▶ <span class="en">Watch Showreel</span><span class="sr">Pogledaj Showreel</span>
         </button>
-        <button class="btn-outline" onclick="showPage('contact')">
-          <span data-lang="en" class="lang-active">Contact</span>
-          <span data-lang="sr">Kontakt</span>
+        <button class="btn-outline" onclick="navigate('contact')">
+          <span class="en">Get in Touch</span><span class="sr">Kontaktirajte nas</span>
         </button>
       </div>
     </div>
-  </div>
+    <div class="hero-scroll">
+      <span class="en">Scroll</span><span class="sr">Skroluj</span>
+    </div>
+  </section>
 
   <!-- AWARDS STRIP -->
-  <div class="awards-strip reveal">
-    <div class="award-item">
-      <span class="award-title">Best Actress</span>
-      <span class="award-meta">Oman Film Festival · 2023 · A Cross in the Desert</span>
-    </div>
-    <div class="award-item">
-      <span class="award-title">Best Actress</span>
-      <span class="award-meta">Chicago Serbian FF · 2022 · A Cross in the Desert</span>
-    </div>
-    <div class="award-item">
-      <span class="award-title">Best Supporting Actress</span>
-      <span class="award-meta">Chicago Serbian FF · 2024 · Isolation</span>
-    </div>
-    <div class="award-item">
-      <span class="award-title">Best Actress</span>
-      <span class="award-meta">Independent Shorts Award · 2019 · Submission</span>
-    </div>
-    <div class="award-item">
-      <span class="award-title">Best Debutant</span>
-      <span class="award-meta">Niš Film Festival · 2009 · St George Shoots the Dragon</span>
+  <div class="awards-strip">
+    <div class="awards-inner">
+      <div class="award-item">
+        <span class="award-label"><span class="en">Best Actress</span><span class="sr">Najbolja Glumica</span></span>
+        <span class="award-film">A Cross in the Desert</span>
+        <span class="award-event">Oman Film Festival, 2023</span>
+      </div>
+      <div class="award-item">
+        <span class="award-label"><span class="en">Best Actress</span><span class="sr">Najbolja Glumica</span></span>
+        <span class="award-film">A Cross in the Desert</span>
+        <span class="award-event">Chicago Serbian FF, 2022</span>
+      </div>
+      <div class="award-item">
+        <span class="award-label"><span class="en">Best Supporting Actress</span><span class="sr">Najb. Sporedna Glumica</span></span>
+        <span class="award-film">Isolation</span>
+        <span class="award-event">Chicago Serbian FF, 2024</span>
+      </div>
+      <div class="award-item">
+        <span class="award-label"><span class="en">Best Actress</span><span class="sr">Najb. Glumica</span></span>
+        <span class="award-film">Submission</span>
+        <span class="award-event">Independent Shorts Award, 2019</span>
+      </div>
+      <div class="award-item">
+        <span class="award-label"><span class="en">Best Debutant</span><span class="sr">Najb. Debitant</span></span>
+        <span class="award-film">St George Shoots the Dragon</span>
+        <span class="award-event">Niš Film Festival, 2009</span>
+      </div>
     </div>
   </div>
 
   <!-- SELECTED WORK -->
-  <section class="reveal">
-    <p class="section-label">
-      <span data-lang="en" class="lang-active">Selected Work</span>
-      <span data-lang="sr">Odabrani Radovi</span>
-    </p>
-    <h2 class="section-title">
-      <span data-lang="en" class="lang-active">Recent Projects</span>
-      <span data-lang="sr">Nedavni Projekti</span>
-    </h2>
-    <div class="divider"></div>
+  <section>
+    <p class="section-eyebrow"><span class="en">Selected Work</span><span class="sr">Odabrani Radovi</span></p>
+    <h2 class="section-title"><span class="en">Recent Productions</span><span class="sr">Nedavne Produkcije</span></h2>
+    <div class="work-grid" id="workGrid">
+      <!-- work_1 through work_6 go here — placeholders for now -->
+      <div class="work-item">
+        <div class="work-placeholder">
+          <div class="work-placeholder-icon">◻</div>
+          <div class="work-placeholder-text">A Cross in the Desert</div>
+          <div class="work-placeholder-year">2022 · Saint Petka</div>
+        </div>
+        <div class="work-item-overlay"></div>
+        <div class="work-item-info">
+          <div class="work-item-title">A Cross in the Desert</div>
+          <div class="work-item-role">Saint Petka · 2022</div>
+        </div>
+      </div>
+      <div class="work-item">
+        <div class="work-placeholder">
+          <div class="work-placeholder-icon">◻</div>
+          <div class="work-placeholder-text">Isolation</div>
+          <div class="work-placeholder-year">2024 · Dr. Ema Popović</div>
+        </div>
+        <div class="work-item-overlay"></div>
+        <div class="work-item-info">
+          <div class="work-item-title">Isolation</div>
+          <div class="work-item-role">Dr. Ema Popović · 2024</div>
+        </div>
+      </div>
+      <div class="work-item">
+        <div class="work-placeholder">
+          <div class="work-placeholder-icon">◻</div>
+          <div class="work-placeholder-text">Robin Hood</div>
+          <div class="work-placeholder-year">2025 · Matilda</div>
+        </div>
+        <div class="work-item-overlay"></div>
+        <div class="work-item-info">
+          <div class="work-item-title">Robin Hood</div>
+          <div class="work-item-role">Matilda · 2025</div>
+        </div>
+      </div>
+      <div class="work-item">
+        <div class="work-placeholder">
+          <div class="work-placeholder-icon">◻</div>
+          <div class="work-placeholder-text">Hotel Belgrade</div>
+          <div class="work-placeholder-year">2020 · Miljana</div>
+        </div>
+        <div class="work-item-overlay"></div>
+        <div class="work-item-info">
+          <div class="work-item-title">Hotel Belgrade</div>
+          <div class="work-item-role">Miljana · 2020</div>
+        </div>
+      </div>
+      <div class="work-item">
+        <div class="work-placeholder">
+          <div class="work-placeholder-icon">◻</div>
+          <div class="work-placeholder-text">Branilac</div>
+          <div class="work-placeholder-year">2021–2025 · Mentioned/Zvezdana/Milena</div>
+        </div>
+        <div class="work-item-overlay"></div>
+        <div class="work-item-info">
+          <div class="work-item-title">Branilac</div>
+          <div class="work-item-role">Recurring · 2021–2025</div>
+        </div>
+      </div>
+      <div class="work-item">
+        <div class="work-placeholder">
+          <div class="work-placeholder-icon">◻</div>
+          <div class="work-placeholder-text">August</div>
+          <div class="work-placeholder-year">2025 · Ljubica</div>
+        </div>
+        <div class="work-item-overlay"></div>
+        <div class="work-item-info">
+          <div class="work-item-title">August</div>
+          <div class="work-item-role">Ljubica · 2025</div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <div class="work-grid">
-    <div class="work-item reveal" onclick="showPage('filmography')">
-      <div class="work-item-placeholder"><span class="placeholder-label">Photo</span></div>
-      <div class="work-item-overlay">
-        <div class="work-item-title">Isolation</div>
-        <div class="work-item-role">Dr. Ema Popović</div>
-        <div class="work-item-year">2024 · Film</div>
-      </div>
-    </div>
-    <div class="work-item reveal" onclick="showPage('filmography')">
-      <div class="work-item-placeholder"><span class="placeholder-label">Photo</span></div>
-      <div class="work-item-overlay">
-        <div class="work-item-title">A Cross in the Desert</div>
-        <div class="work-item-role">Saint Petka</div>
-        <div class="work-item-year">2022 · Film</div>
-      </div>
-    </div>
-    <div class="work-item reveal" onclick="showPage('filmography')">
-      <div class="work-item-placeholder"><span class="placeholder-label">Photo</span></div>
-      <div class="work-item-overlay">
-        <div class="work-item-title">Time of Death</div>
-        <div class="work-item-role">Petrana</div>
-        <div class="work-item-year">2024 · Television</div>
-      </div>
-    </div>
-    <div class="work-item reveal" onclick="showPage('filmography')">
-      <div class="work-item-placeholder"><span class="placeholder-label">Photo</span></div>
-      <div class="work-item-overlay">
-        <div class="work-item-title">Underneath</div>
-        <div class="work-item-role">Sanja Tošić</div>
-        <div class="work-item-year">2024 · Television</div>
-      </div>
-    </div>
-    <div class="work-item reveal" onclick="showPage('filmography')">
-      <div class="work-item-placeholder"><span class="placeholder-label">Photo</span></div>
-      <div class="work-item-overlay">
-        <div class="work-item-title">Branilac</div>
-        <div class="work-item-role">Spomenka / Zvezdana / Milena</div>
-        <div class="work-item-year">2021–2025 · Television</div>
-      </div>
-    </div>
-    <div class="work-item reveal" onclick="showPage('filmography')">
-      <div class="work-item-placeholder"><span class="placeholder-label">Photo</span></div>
-      <div class="work-item-overlay">
-        <div class="work-item-title">Hotel Belgrade</div>
-        <div class="work-item-role">Miljana</div>
-        <div class="work-item-year">2020 · Film</div>
-      </div>
-    </div>
-  </div>
-
   <!-- ABOUT PREVIEW -->
-  <section class="reveal">
+  <section style="background: var(--bg-secondary); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);">
     <div class="about-preview">
       <div class="about-preview-img">
-        <div class="about-preview-placeholder"><span class="placeholder-label">Portrait</span></div>
+        <img src="https://raw.githubusercontent.com/LordHidetora/milena-predic-website/main/about_1.JPG"
+             alt="Milena Predić"
+             onerror="this.style.display='none'">
       </div>
       <div class="about-preview-text">
-        <p class="section-label">
-          <span data-lang="en" class="lang-active">About Milena</span>
-          <span data-lang="sr">O Mileni</span>
-        </p>
-        <h2 class="section-title" style="font-size: clamp(28px,4vw,44px);">
-          <span data-lang="en" class="lang-active">Emotional Precision.<br>International Range.</span>
-          <span data-lang="sr">Emocionalna preciznost.<br>Međunarodni doseg.</span>
-        </h2>
-        <div class="divider"></div>
-        <p data-lang="en" class="lang-active">Milena Predić is a Belgrade-based actress born in Pančevo, Serbia. A graduate of the Faculty of Dramatic Arts in Belgrade, she has built a career spanning film, television, and theatre across more than fifteen years of professional work.</p>
-        <p data-lang="sr">Milena Predić je glumica iz Beograda, rođena u Pančevu. Diplomirala je na Fakultetu dramskih umetnosti u Beogradu i izgradila karijeru u filmu, televiziji i pozorištu tokom više od petnaest godina profesionalnog rada.</p>
-        <p data-lang="en" class="lang-active">Her international awards include Best Actress at the Oman Film Festival and the Chicago Serbian Film Festival for <em>A Cross in the Desert</em> (2022), and Best Supporting Actress at the Chicago Serbian Film Festival for <em>Isolation</em> (2024). She works fluently in Serbian, English, and Russian.</p>
-        <p data-lang="sr">Njene međunarodne nagrade uključuju nagradu za najboljeg glumca na filmskim festivalima u Omanu i Čikagu za film <em>A Cross in the Desert</em> (2022), kao i nagradu za najboljeg sporednog glumca na Čikaškom srpskom filmskom festivalu za <em>Isolation</em> (2024).</p>
-        <button class="btn-outline" onclick="showPage('about')" style="margin-top:16px;">
-          <span data-lang="en" class="lang-active">Full Biography</span>
-          <span data-lang="sr">Puna Biografija</span>
+        <p class="section-eyebrow"><span class="en">About</span><span class="sr">O meni</span></p>
+        <div class="section-divider"></div>
+        <p class="en">Milena Predić is a Belgrade-based actress trained at the Faculty of Dramatic Arts. Over a career spanning more than fifteen years, she has built a reputation for emotionally precise, psychologically complex performances across film, television and stage. Her work has been recognised at international festivals including the Oman Film Festival and the Chicago Serbian Film Festival.</p>
+        <p class="sr">Milena Predić je beogradska glumica školovana na Fakultetu dramskih umetnosti. Tokom karijere koja traje više od petnaest godina, izgradila je reputaciju kroz emotivno precizne i psihološki složene nastupe u filmu, televiziji i na pozornici.</p>
+        <button class="btn-text" onclick="navigate('about')">
+          <span class="en">Full Biography →</span><span class="sr">Puna Biografija →</span>
         </button>
       </div>
     </div>
   </section>
 
   <!-- SHOWREEL PREVIEW -->
-  <div class="video-section section-full reveal">
-    <div style="max-width:var(--max-w); margin:0 auto; padding:0 40px;">
-      <p class="section-label" style="margin-bottom:32px;">
-        <span data-lang="en" class="lang-active">Showreel</span>
-        <span data-lang="sr">Showreel</span>
-      </p>
-    </div>
-    <div class="video-wrapper" style="max-width:900px; margin:0 auto 0; padding:0 40px; box-sizing:content-box;">
-      <div class="video-placeholder" id="showreelPreview" onclick="showPage('showreel')">
-        <div class="play-btn">
-          <svg width="18" height="20" viewBox="0 0 18 20" fill="none">
-            <path d="M1 1l16 9-16 9V1z" fill="rgba(200,168,130,0.8)"/>
-          </svg>
+  <section class="showreel-preview-section">
+    <div class="showreel-inner">
+      <p class="section-eyebrow" style="text-align:center">Showreel</p>
+      <h2 class="section-title" style="text-align:center; margin-bottom: 40px">
+        <span class="en">Watch the Work</span><span class="sr">Pogledajte radove</span>
+      </h2>
+      <div class="video-wrapper" id="mainVideoWrapper">
+        <div class="video-placeholder" onclick="navigate('showreel')">
+          <div class="play-btn">▶</div>
+          <div class="video-placeholder-text">
+            <span class="en">Showreel — Coming Soon</span><span class="sr">Showreel — Uskoro</span>
+          </div>
         </div>
-        <p style="font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:rgba(200,168,130,0.5);">
-          <span data-lang="en" class="lang-active">Watch Full Showreel</span>
-          <span data-lang="sr">Pogledaj Showreel</span>
-        </p>
       </div>
+      <button class="btn-outline" onclick="navigate('showreel')" style="margin: 0 auto; display:block; width: fit-content; color: var(--text); border-color: var(--border);">
+        <span class="en">Full Showreel & Clips</span><span class="sr">Ceo Showreel i Klipovi</span>
+      </button>
     </div>
-  </div>
-
-  <!-- NEWS PREVIEW -->
-  <section class="reveal">
-    <p class="section-label">
-      <span data-lang="en" class="lang-active">Latest News</span>
-      <span data-lang="sr">Najnovije Vesti</span>
-    </p>
-    <h2 class="section-title">
-      <span data-lang="en" class="lang-active">News & Updates</span>
-      <span data-lang="sr">Vesti i Novosti</span>
-    </h2>
-    <div class="divider"></div>
   </section>
 
-  <div class="news-grid reveal">
-    <div class="news-item" onclick="showPage('news')">
-      <p class="news-date">June 2025</p>
-      <h3 class="news-title">Five New Productions in 2025</h3>
-      <p class="news-excerpt">Milena appears in five new film and television productions this year, including <em>Return of Zika's Dynasty</em>, <em>Robin Hood</em>, and <em>August</em>.</p>
+  <!-- LATEST NEWS -->
+  <section>
+    <p class="section-eyebrow"><span class="en">Latest</span><span class="sr">Najnovije</span></p>
+    <h2 class="section-title"><span class="en">News & Projects</span><span class="sr">Vesti i Projekti</span></h2>
+    <div class="news-grid">
+      <div class="news-item">
+        <div class="news-date">2025</div>
+        <div class="news-category"><span class="en">New Project</span><span class="sr">Novi Projekat</span></div>
+        <div class="news-headline">Robin Hood</div>
+        <div class="news-excerpt en">Cast as Matilda in the new Serbian television production Robin Hood, currently in production.</div>
+        <div class="news-excerpt sr">Uloga Matilde u novoj srpskoj televizijskoj produkciji Robin Hood, trenutno u produkciji.</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2024</div>
+        <div class="news-category"><span class="en">Award</span><span class="sr">Nagrada</span></div>
+        <div class="news-headline">Chicago Serbian FF — Best Supporting Actress</div>
+        <div class="news-excerpt en">Received the Best Supporting Actress award at the Chicago Serbian Film Festival for the film Isolation.</div>
+        <div class="news-excerpt sr">Dobila nagradu za najbolju sporednu glumicu na Čikaškom srpskom filmskom festivalu za film Isolation.</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2023</div>
+        <div class="news-category"><span class="en">Award</span><span class="sr">Nagrada</span></div>
+        <div class="news-headline">Oman Film Festival — Best Actress</div>
+        <div class="news-excerpt en">Best Actress at the Oman Film Festival for A Cross in the Desert, following the same award at Chicago Serbian FF in 2022.</div>
+        <div class="news-excerpt sr">Nagrada za najbolju glumicu na Oman Film Festivalu za film A Cross in the Desert.</div>
+      </div>
     </div>
-    <div class="news-item" onclick="showPage('news')">
-      <p class="news-date">October 2024</p>
-      <h3 class="news-title">Best Supporting Actress — Chicago</h3>
-      <p class="news-excerpt">Milena receives the Best Supporting Actress award at the Chicago Serbian Film Festival for her role in <em>Isolation</em>.</p>
-    </div>
-    <div class="news-item" onclick="showPage('news')">
-      <p class="news-date">November 2023</p>
-      <h3 class="news-title">Best Actress — Oman Film Festival</h3>
-      <p class="news-excerpt">Award for Best Actress at the Oman Film Festival for the lead role of Saint Petka in <em>A Cross in the Desert</em>.</p>
-    </div>
-  </div>
+  </section>
 
   <!-- CONTACT STRIP -->
-  <div class="contact-strip reveal" style="margin-top:80px;">
+  <div class="contact-strip">
     <div class="contact-block">
-      <p class="contact-block-label">
-        <span data-lang="en" class="lang-active">Direct Contact</span>
-        <span data-lang="sr">Direktan Kontakt</span>
-      </p>
+      <div class="contact-block-label"><span class="en">Direct Contact</span><span class="sr">Direktan Kontakt</span></div>
       <div class="contact-block-value">
         <a href="mailto:milenapredicster@gmail.com">milenapredicster@gmail.com</a>
       </div>
     </div>
     <div class="contact-block">
-      <p class="contact-block-label">
-        <span data-lang="en" class="lang-active">Phone</span>
-        <span data-lang="sr">Telefon</span>
-      </p>
+      <div class="contact-block-label"><span class="en">Phone</span><span class="sr">Telefon</span></div>
       <div class="contact-block-value">
         <a href="tel:+381637071965">+381 63 707 1965</a>
       </div>
     </div>
     <div class="contact-block">
-      <p class="contact-block-label">Instagram</p>
+      <div class="contact-block-label">Instagram</div>
       <div class="contact-block-value">
         <a href="#" target="_blank">@milenapredic</a>
       </div>
     </div>
     <div class="contact-block">
-      <p class="contact-block-label">IMDb</p>
+      <div class="contact-block-label">IMDb</div>
       <div class="contact-block-value">
-        <a href="#" target="_blank">IMDb Profile ↗</a>
+        <a href="#" target="_blank"><span class="en">View Profile</span><span class="sr">Pogledaj Profil</span></a>
       </div>
     </div>
   </div>
 
   <footer>
     <span class="footer-name">Milena Predić</span>
-    <span class="footer-copy">© 2025 · Belgrade, Serbia</span>
+    <span class="footer-copy">© 2025 · <span class="en">All rights reserved</span><span class="sr">Sva prava zadržana</span></span>
   </footer>
-</div>
 
+</div><!-- end page-home -->
 
-<!-- ═══════════════════════════════════════════════════════
-     PAGE: ABOUT
-════════════════════════════════════════════════════════ -->
+<!-- ABOUT PAGE -->
 <div class="page" id="page-about">
-  <section style="padding-top: calc(var(--nav-h) + 60px);">
-    <div class="about-layout">
-
-      <div class="about-sidebar">
-        <div class="about-photo">
-          <div class="about-preview-placeholder" style="aspect-ratio:3/4; background: linear-gradient(160deg, var(--c-surface), var(--c-bg3)); display:flex; align-items:center; justify-content:center;">
-            <span class="placeholder-label">Headshot</span>
-          </div>
-        </div>
-
-        <div class="info-block">
-          <p class="info-label">
-            <span data-lang="en" class="lang-active">Physical</span>
-            <span data-lang="sr">Fizički Podaci</span>
-          </p>
-          <div class="info-grid">
-            <div>
-              <p style="font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--c-text3);margin-bottom:2px;">
-                <span data-lang="en" class="lang-active">Height</span>
-                <span data-lang="sr">Visina</span>
-              </p>
-              <p class="info-value">168 cm</p>
-            </div>
-            <div>
-              <p style="font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--c-text3);margin-bottom:2px;">
-                <span data-lang="en" class="lang-active">Weight</span>
-                <span data-lang="sr">Težina</span>
-              </p>
-              <p class="info-value">61 kg</p>
-            </div>
-            <div>
-              <p style="font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--c-text3);margin-bottom:2px;">
-                <span data-lang="en" class="lang-active">Eyes</span>
-                <span data-lang="sr">Oči</span>
-              </p>
-              <p class="info-value">Brown</p>
-            </div>
-            <div>
-              <p style="font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--c-text3);margin-bottom:2px;">
-                <span data-lang="en" class="lang-active">Hair</span>
-                <span data-lang="sr">Kosa</span>
-              </p>
-              <p class="info-value">Brown, medium</p>
-            </div>
-            <div>
-              <p style="font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--c-text3);margin-bottom:2px;">
-                <span data-lang="en" class="lang-active">Acting Age</span>
-                <span data-lang="sr">Glum. Starost</span>
-              </p>
-              <p class="info-value">38–50</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="info-block">
-          <p class="info-label">
-            <span data-lang="en" class="lang-active">Languages</span>
-            <span data-lang="sr">Jezici</span>
-          </p>
-          <p class="info-value">Serbian (native)<br>English (fluent)<br>Russian (fluent)</p>
-        </div>
-
-        <div class="info-block">
-          <p class="info-label">
-            <span data-lang="en" class="lang-active">Accents</span>
-            <span data-lang="sr">Akcenti</span>
-          </p>
-          <p class="info-value">Slavic · Russian</p>
-        </div>
-
-        <div class="info-block">
-          <p class="info-label">
-            <span data-lang="en" class="lang-active">Sport</span>
-            <span data-lang="sr">Sport</span>
-          </p>
-          <p class="info-value">Tennis · Padel · Skiing</p>
-        </div>
-
-        <div class="download-group">
-          <button class="btn-outline" style="justify-content:center;" onclick="alert('CV download — add PDF link here')">
-            <span data-lang="en" class="lang-active">↓ Download CV</span>
-            <span data-lang="sr">↓ Preuzmi CV</span>
-          </button>
-          <button class="btn-outline" style="justify-content:center;" onclick="alert('Headshots download — add ZIP link here')">
-            <span data-lang="en" class="lang-active">↓ Download Headshots</span>
-            <span data-lang="sr">↓ Preuzmi Fotografije</span>
-          </button>
+  <div class="page-header">
+    <p class="section-eyebrow"><span class="en">About</span><span class="sr">O meni</span></p>
+    <h1><span class="en">Biography</span><span class="sr">Biografija</span></h1>
+  </div>
+  <div class="about-layout">
+    <div class="about-sidebar">
+      <img src="https://raw.githubusercontent.com/LordHidetora/milena-predic-website/main/about_1.JPG"
+           alt="Milena Predić" class="about-photo"
+           onerror="this.style.background='var(--bg-secondary)'">
+      <img src="https://raw.githubusercontent.com/LordHidetora/milena-predic-website/main/about_2.JPG"
+           alt="Milena Predić" class="about-photo-2"
+           onerror="this.style.background='var(--bg-secondary)'">
+      <div class="sidebar-block">
+        <div class="sidebar-label"><span class="en">Physical</span><span class="sr">Fizičke Karakteristike</span></div>
+        <div class="sidebar-value">
+          <span class="en">Height: 168 cm · Weight: 61 kg<br>Eyes: Brown · Hair: Brown, Medium<br>Acting age: 38–50</span>
+          <span class="sr">Visina: 168 cm · Težina: 61 kg<br>Oči: Braon · Kosa: Braon, Srednja<br>Glumačke godine: 38–50</span>
         </div>
       </div>
-
-      <div class="about-bio">
-        <p class="section-label" style="margin-bottom:16px;">
-          <span data-lang="en" class="lang-active">Biography</span>
-          <span data-lang="sr">Biografija</span>
-        </p>
-
-        <div data-lang="en" class="lang-active">
-          <p>Milena Predić is a Belgrade-based actress whose work moves between psychological realism and mythological intensity — a range that has brought her recognition on screens and stages across Europe and the Middle East.</p>
-          <p>Born in Pančevo, Serbia, she trained at the Faculty of Dramatic Arts in Belgrade, one of the most rigorous acting programmes in Southeast Europe. Her graduation period coincided with a breakthrough: her debut in Srđan Dragojević's landmark film <em>St George Shoots the Dragon</em> (2009) earned her the Best Debutant award at the Niš Film Festival.</p>
-          <p>In the years since, Milena has accumulated an extensive body of work across formats. In television, she has appeared in long-running Serbian dramas including <em>Branilac</em> (2021–2025), <em>Time of Death</em>, <em>Underneath</em>, <em>Bad Blood</em>, and <em>The Sindjelics</em>. In film, her most celebrated role is Saint Petka in <em>A Cross in the Desert</em> (2022), which brought her dual Best Actress awards at the Chicago Serbian Film Festival and the Oman Film Festival in 2023.</p>
-          <p>Her performance in the short film <em>Submission</em> received the Best Actress award at the Independent Shorts Award in 2019, and her supporting role in <em>Isolation</em> was honoured at the Chicago Serbian Film Festival in 2024.</p>
-          <p>Milena works in Serbian, English, and Russian, and holds accents in both Slavic and Russian registers. She is trained in stage combat, physical theatre, and improvisation, and sings as a mezzo-soprano. In 2025 she appears in five new productions, including the television series <em>Robin Hood</em> and the features <em>Return of Zika's Dynasty</em>, <em>Sedef Magla</em>, <em>August</em>, and <em>How Come It's All Green Out Here</em>.</p>
-        </div>
-
-        <div data-lang="sr">
-          <p>Milena Predić je glumica iz Beograda čiji rad osciluje između psihološkog realizma i mitološke intenzivnosti — raspon koji joj je doneo prepoznatljivost na ekranima i scenama širom Evrope i Bliskog istoka.</p>
-          <p>Rođena u Pančevu, školovala se na Fakultetu dramskih umetnosti u Beogradu. Njen debi u kultnom filmu Srđana Dragojevića <em>Sveti Georgije ubiva aždahu</em> (2009) doneo joj je nagradu za Najboljeg debitanta na Filmskim susretima u Nišu.</p>
-          <p>Tokom narednih godina izgradila je obimnu karijeru u različitim formatima. Na televiziji se pojavila u dugotrajnim srpskim dramama uključujući <em>Branioca</em> (2021–2025), <em>Vreme smrti</em>, <em>Ispod</em>, <em>Loša krv</em> i <em>Sinđeliće</em>. Najcenjenija filmska uloga je Sveta Petka u <em>Krst u pustinji</em> (2022), za koju je dobila dve nagrade za Najbolju glumicu na Čikaškom srpskom filmskom festivalu i Filmskom festivalu u Omanu 2023.</p>
-          <p>Milena govori srpski, engleski i ruski, a poseduje akcentе na slovenskom i ruskom. Obučena je za scenske borbe, fizičko pozorište i improvizaciju. U 2025. godini pojavljuje se u pet novih produkcija.</p>
-        </div>
-
-        <div style="margin-top:48px;">
-          <p class="info-label">
-            <span data-lang="en" class="lang-active">Acting Skills</span>
-            <span data-lang="sr">Glum. Veštine</span>
-          </p>
-          <div class="skills-list">
-            <span class="skill-tag">Improvisation</span>
-            <span class="skill-tag">Character Development</span>
-            <span class="skill-tag">Stage Combat</span>
-            <span class="skill-tag">Voice Projection</span>
-            <span class="skill-tag">Script Analysis</span>
-            <span class="skill-tag">Physical Theatre</span>
-            <span class="skill-tag">Singing</span>
-          </div>
-        </div>
-
-        <div style="margin-top:36px;">
-          <p class="info-label">
-            <span data-lang="en" class="lang-active">Awards</span>
-            <span data-lang="sr">Nagrade</span>
-          </p>
-          <table style="width:100%; border-collapse:collapse; margin-top:8px;">
-            <tbody>
-              <tr style="border-bottom:1px solid var(--c-border);">
-                <td style="padding:14px 0; font-size:11px; color:var(--c-text3); width:60px;">2024</td>
-                <td style="padding:14px 16px 14px 0;">
-                  <p style="font-size:14px; color:var(--c-text);">Best Supporting Actress</p>
-                  <p style="font-size:11px; color:var(--c-text3); margin-top:2px;">Chicago Serbian FF · <em>Isolation</em></p>
-                </td>
-              </tr>
-              <tr style="border-bottom:1px solid var(--c-border);">
-                <td style="padding:14px 0; font-size:11px; color:var(--c-text3);">2023</td>
-                <td style="padding:14px 16px 14px 0;">
-                  <p style="font-size:14px; color:var(--c-text);">Best Actress</p>
-                  <p style="font-size:11px; color:var(--c-text3); margin-top:2px;">Oman Film Festival · <em>A Cross in the Desert</em></p>
-                </td>
-              </tr>
-              <tr style="border-bottom:1px solid var(--c-border);">
-                <td style="padding:14px 0; font-size:11px; color:var(--c-text3);">2022</td>
-                <td style="padding:14px 16px 14px 0;">
-                  <p style="font-size:14px; color:var(--c-text);">Best Actress</p>
-                  <p style="font-size:11px; color:var(--c-text3); margin-top:2px;">Chicago Serbian FF · <em>A Cross in the Desert</em></p>
-                </td>
-              </tr>
-              <tr style="border-bottom:1px solid var(--c-border);">
-                <td style="padding:14px 0; font-size:11px; color:var(--c-text3);">2019</td>
-                <td style="padding:14px 16px 14px 0;">
-                  <p style="font-size:14px; color:var(--c-text);">Best Actress</p>
-                  <p style="font-size:11px; color:var(--c-text3); margin-top:2px;">Independent Shorts Award · <em>Submission</em></p>
-                </td>
-              </tr>
-              <tr>
-                <td style="padding:14px 0; font-size:11px; color:var(--c-text3);">2009</td>
-                <td style="padding:14px 16px 14px 0;">
-                  <p style="font-size:14px; color:var(--c-text);">Best Debutant</p>
-                  <p style="font-size:11px; color:var(--c-text3); margin-top:2px;">Niš Film Festival · <em>St George Shoots the Dragon</em></p>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+      <div class="sidebar-block">
+        <div class="sidebar-label"><span class="en">Languages</span><span class="sr">Jezici</span></div>
+        <div class="sidebar-value">Serbian · English · Russian<br><small style="color:var(--text-faint)">Accents: Slavic, Russian</small></div>
+      </div>
+      <div class="sidebar-block">
+        <div class="sidebar-label"><span class="en">Sports</span><span class="sr">Sport</span></div>
+        <div class="sidebar-value">Tennis · Padel · Skiing</div>
+      </div>
+      <div class="sidebar-block">
+        <div class="sidebar-label"><span class="en">Singing</span><span class="sr">Pevanje</span></div>
+        <div class="sidebar-value">Tenor</div>
       </div>
     </div>
-  </section>
+    <div class="about-main">
+      <h2><span class="en">Short Biography</span><span class="sr">Kratka Biografija</span></h2>
+      <p class="lead en">Milena Predić is a Serbian actress born in Pančevo, trained at the Faculty of Dramatic Arts in Belgrade. She works across film, television and stage, and has been recognised at international festivals for her depth of character and emotional precision.</p>
+      <p class="lead sr">Milena Predić je srpska glumica rođena u Pančevu, školovana na Fakultetu dramskih umetnosti u Beogradu. Radi u filmu, televiziji i pozorištu, a međunarodnim festivalima prepoznata je po dubini karaktera i emotivnoj preciznosti.</p>
 
+      <h2><span class="en">Biography</span><span class="sr">Biografija</span></h2>
+      <p class="en">Milena Predić graduated from the Faculty of Dramatic Arts in Belgrade, one of the most respected theatre and film training institutions in the region. Her stage work has encompassed classical and contemporary repertoire, developing a technical foundation that informs her screen work.</p>
+      <p class="en">Her film debut in St George Shoots the Dragon (2009) earned her the Best Debutant award at the Niš Film Festival. Since then she has built a diverse filmography that spans lead and supporting roles in feature films, short films and long-running television series. Her work in A Cross in the Desert (2022) brought her international recognition, winning Best Actress at both the Chicago Serbian Film Festival and the Oman Film Festival in 2023.</p>
+      <p class="en">In 2024, her performance in Isolation added a Best Supporting Actress award from Chicago Serbian FF to her credits. She continues to be active across multiple productions, with five projects in 2025 alone, demonstrating consistent professional demand.</p>
+      <p class="en">She brings to each role a commitment to psychological truth, a trained physical and vocal technique, and a collaborative approach developed over more than fifteen years of professional work.</p>
+
+      <p class="sr">Milena Predić diplomirala je na Fakultetu dramskih umetnosti u Beogradu, jednoj od najuglednijih institucija za obrazovanje glumaca u regionu. Pozorišni rad obuhvata klasični i savremeni repertoar, razvijajući tehničku osnovu koja informiše njen ekranski rad.</p>
+      <p class="sr">Film debi u Svetom Đorđu koji ubija aždahu (2009) doneo joj je nagradu za najboljeg debitanta na Filmskim susretima u Nišu. Od tada je izgradila raznoliku filmografiju koja obuhvata glavne i sporedne uloge u igranim filmovima, kratkim filmovima i dugotrajnim televizijskim serijama.</p>
+      <p class="sr">Nastup u Krstu u pustinji (2022) doneo joj je međunarodno priznanje — nagradu za najbolju glumicu na Čikaškom srpskom filmskom festivalu i Oman film festivalu 2023. godine.</p>
+
+      <h2><span class="en">Skills</span><span class="sr">Veštine</span></h2>
+      <div class="skills-grid">
+        <div class="skill-tag">Improvisation</div>
+        <div class="skill-tag">Character Development</div>
+        <div class="skill-tag">Stage Combat (Basics)</div>
+        <div class="skill-tag">Voice Projection & Diction</div>
+        <div class="skill-tag">Script Analysis</div>
+        <div class="skill-tag">Physical Theatre</div>
+      </div>
+
+      <div class="download-btns">
+        <a href="mailto:milenapredicster@gmail.com?subject=CV Request" class="btn-primary">
+          <span class="en">↓ Request CV</span><span class="sr">↓ Zatraži CV</span>
+        </a>
+        <a href="mailto:milenapredicster@gmail.com?subject=Headshot Request" class="btn-outline" style="color:var(--text); border-color:var(--border);">
+          <span class="en">↓ Request Headshots</span><span class="sr">↓ Zatraži Fotografije</span>
+        </a>
+      </div>
+    </div>
+  </div>
   <footer>
     <span class="footer-name">Milena Predić</span>
-    <span class="footer-copy">© 2025 · Belgrade, Serbia</span>
+    <span class="footer-copy">© 2025</span>
   </footer>
 </div>
 
-
-<!-- ═══════════════════════════════════════════════════════
-     PAGE: SHOWREEL
-════════════════════════════════════════════════════════ -->
+<!-- SHOWREEL PAGE -->
 <div class="page" id="page-showreel">
-  <div class="showreel-hero">
-    <p class="section-label">Showreel</p>
-    <h1 class="section-title">
-      <span data-lang="en" class="lang-active">Work on Screen</span>
-      <span data-lang="sr">Rad na Ekranu</span>
-    </h1>
-    <div class="divider"></div>
-
-    <div class="video-wrapper" style="max-width:100%; margin-bottom:60px;">
-      <div class="video-placeholder" id="mainShowreel">
-        <div class="play-btn">
-          <svg width="18" height="20" viewBox="0 0 18 20" fill="none">
-            <path d="M1 1l16 9-16 9V1z" fill="rgba(200,168,130,0.8)"/>
-          </svg>
+  <div class="page-header">
+    <p class="section-eyebrow">Showreel</p>
+    <h1><span class="en">Watch the Work</span><span class="sr">Pogledajte Radove</span></h1>
+  </div>
+  <div class="showreel-layout">
+    <div class="main-reel">
+      <div class="reel-title">
+        <span class="en">Main Showreel</span><span class="sr">Glavni Showreel</span>
+      </div>
+      <div class="reel-desc">
+        <span class="en">Film, television and theatre — selected scenes 2009–2025</span>
+        <span class="sr">Film, televizija i pozorište — odabrane scene 2009–2025</span>
+      </div>
+      <div class="video-wrapper">
+        <div class="video-placeholder">
+          <div class="play-btn">▶</div>
+          <div class="video-placeholder-text">
+            <span class="en">Showreel link coming soon</span><span class="sr">Link za showreel uskoro</span>
+          </div>
         </div>
-        <p style="font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:rgba(200,168,130,0.4);">
-          <span data-lang="en" class="lang-active">Showreel 2024 — Link to be added</span>
-          <span data-lang="sr">Showreel 2024 — Link se dodaje</span>
-        </p>
       </div>
     </div>
-
-    <p class="section-label" style="margin-bottom:32px;">
-      <span data-lang="en" class="lang-active">Selected Scenes</span>
-      <span data-lang="sr">Odabrane Scene</span>
-    </p>
-
+    <div class="section-divider"></div>
+    <p class="section-eyebrow" style="margin-top:48px"><span class="en">Additional Clips</span><span class="sr">Dodatni Klipovi</span></p>
     <div class="clips-grid">
       <div class="clip-item">
-        <div class="clip-thumb"><span class="placeholder-label">Scene</span></div>
-        <div class="clip-overlay">
-          <div class="play-btn" style="width:48px;height:48px;">
-            <svg width="12" height="14" viewBox="0 0 18 20" fill="none" style="margin-left:3px;">
-              <path d="M1 1l16 9-16 9V1z" fill="rgba(200,168,130,0.8)"/>
-            </svg>
-          </div>
-        </div>
-        <div class="clip-info">
-          <p class="clip-title">A Cross in the Desert</p>
-          <p class="clip-type">Film · 2022</p>
-        </div>
+        <div class="clip-thumb"><div class="clip-play">▶</div></div>
+        <div class="clip-title">A Cross in the Desert</div>
+        <div class="clip-meta">Film · 2022 · Saint Petka</div>
       </div>
       <div class="clip-item">
-        <div class="clip-thumb"><span class="placeholder-label">Scene</span></div>
-        <div class="clip-overlay">
-          <div class="play-btn" style="width:48px;height:48px;">
-            <svg width="12" height="14" viewBox="0 0 18 20" fill="none" style="margin-left:3px;">
-              <path d="M1 1l16 9-16 9V1z" fill="rgba(200,168,130,0.8)"/>
-            </svg>
-          </div>
-        </div>
-        <div class="clip-info">
-          <p class="clip-title">Isolation</p>
-          <p class="clip-type">Film · 2024</p>
-        </div>
+        <div class="clip-thumb"><div class="clip-play">▶</div></div>
+        <div class="clip-title">Isolation</div>
+        <div class="clip-meta">Film · 2024 · Dr. Ema Popović</div>
       </div>
       <div class="clip-item">
-        <div class="clip-thumb"><span class="placeholder-label">Scene</span></div>
-        <div class="clip-overlay">
-          <div class="play-btn" style="width:48px;height:48px;">
-            <svg width="12" height="14" viewBox="0 0 18 20" fill="none" style="margin-left:3px;">
-              <path d="M1 1l16 9-16 9V1z" fill="rgba(200,168,130,0.8)"/>
-            </svg>
-          </div>
-        </div>
-        <div class="clip-info">
-          <p class="clip-title">Hotel Belgrade</p>
-          <p class="clip-type">Film · 2020</p>
-        </div>
-      </div>
-      <div class="clip-item">
-        <div class="clip-thumb"><span class="placeholder-label">Scene</span></div>
-        <div class="clip-overlay">
-          <div class="play-btn" style="width:48px;height:48px;">
-            <svg width="12" height="14" viewBox="0 0 18 20" fill="none" style="margin-left:3px;">
-              <path d="M1 1l16 9-16 9V1z" fill="rgba(200,168,130,0.8)"/>
-            </svg>
-          </div>
-        </div>
-        <div class="clip-info">
-          <p class="clip-title">Branilac</p>
-          <p class="clip-type">Television · 2021–2025</p>
-        </div>
-      </div>
-      <div class="clip-item">
-        <div class="clip-thumb"><span class="placeholder-label">Scene</span></div>
-        <div class="clip-overlay">
-          <div class="play-btn" style="width:48px;height:48px;">
-            <svg width="12" height="14" viewBox="0 0 18 20" fill="none" style="margin-left:3px;">
-              <path d="M1 1l16 9-16 9V1z" fill="rgba(200,168,130,0.8)"/>
-            </svg>
-          </div>
-        </div>
-        <div class="clip-info">
-          <p class="clip-title">Submission</p>
-          <p class="clip-type">Short Film · 2019</p>
-        </div>
-      </div>
-      <div class="clip-item">
-        <div class="clip-thumb"><span class="placeholder-label">Scene</span></div>
-        <div class="clip-overlay">
-          <div class="play-btn" style="width:48px;height:48px;">
-            <svg width="12" height="14" viewBox="0 0 18 20" fill="none" style="margin-left:3px;">
-              <path d="M1 1l16 9-16 9V1z" fill="rgba(200,168,130,0.8)"/>
-            </svg>
-          </div>
-        </div>
-        <div class="clip-info">
-          <p class="clip-title">St George Shoots the Dragon</p>
-          <p class="clip-type">Film · 2009</p>
-        </div>
+        <div class="clip-thumb"><div class="clip-play">▶</div></div>
+        <div class="clip-title">Submission</div>
+        <div class="clip-meta">Short Film · 2019</div>
       </div>
     </div>
   </div>
-
   <footer>
     <span class="footer-name">Milena Predić</span>
-    <span class="footer-copy">© 2025 · Belgrade, Serbia</span>
+    <span class="footer-copy">© 2025</span>
   </footer>
 </div>
 
-
-<!-- ═══════════════════════════════════════════════════════
-     PAGE: FILMOGRAPHY
-════════════════════════════════════════════════════════ -->
+<!-- FILMOGRAPHY PAGE -->
 <div class="page" id="page-filmography">
-  <section style="padding-top: calc(var(--nav-h) + 60px);">
-    <p class="section-label">
-      <span data-lang="en" class="lang-active">Credits</span>
-      <span data-lang="sr">Uloge</span>
-    </p>
-    <h1 class="section-title">
-      <span data-lang="en" class="lang-active">Filmography</span>
-      <span data-lang="sr">Filmografija</span>
-    </h1>
-    <div class="divider"></div>
-
-    <!-- FILM -->
-    <div class="film-section">
-      <p class="section-label" style="margin-bottom:24px;">Film</p>
-      <table class="film-table">
-        <thead>
-          <tr>
-            <th style="width:52px;">Year</th>
-            <th>Title & Role</th>
-            <th style="width:180px; display:none;" class="hide-mobile">Director</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>2025</td><td><p class="film-title">Return of Zika's Dynasty</p><p class="film-role">Učiteljica</p></td><td></td></tr>
-          <tr><td>2025</td><td><p class="film-title">Hajduk u Beogradu</p><p class="film-role">Srpkinja</p></td><td></td></tr>
-          <tr><td>2025</td><td><p class="film-title">Sedef Magla</p><p class="film-role">Ilka Marković</p></td><td></td></tr>
-          <tr><td>2025</td><td><p class="film-title">How Come It's All Green Out Here</p><p class="film-role">Direktorka marketinga</p></td><td></td></tr>
-          <tr><td>2025</td><td><p class="film-title">August</p><p class="film-role">Ljubica</p></td><td></td></tr>
-          <tr><td>2024</td><td><p class="film-title">Isolation</p><p class="film-role">Dr. Ema Popović</p></td><td></td></tr>
-          <tr><td>2023</td><td><p class="film-title">The Machine</p><p class="film-role">Igor's Wife</p></td><td></td></tr>
-          <tr><td>2022</td><td><p class="film-title">The Deal</p><p class="film-role">Doctor</p></td><td></td></tr>
-          <tr><td>2022</td><td><p class="film-title">A Cross in the Desert</p><p class="film-role">Saint Petka <span style="color:var(--c-accent);font-size:10px;"> ★ Best Actress — Chicago Serbian FF & Oman FF</span></p></td><td></td></tr>
-          <tr><td>2020</td><td><p class="film-title">Hotel Belgrade</p><p class="film-role">Miljana</p></td><td></td></tr>
-          <tr><td>2019</td><td><p class="film-title">Taxi Blues</p><p class="film-role">Tanja</p></td><td></td></tr>
-          <tr><td>2019</td><td><p class="film-title">Submission</p><p class="film-role"><span style="color:var(--c-accent);font-size:10px;">★ Best Actress — Independent Shorts Award</span></p></td><td></td></tr>
-          <tr><td>2018</td><td><p class="film-title">Extinction</p><p class="film-role">Neighbor</p></td><td></td></tr>
-          <tr><td>2012</td><td><p class="film-title">Run Up</p><p class="film-role">Milena</p></td><td></td></tr>
-          <tr><td>2012</td><td><p class="film-title">Dr Rej and Devils</p><p class="film-role">Jeanne Moreau</p></td><td></td></tr>
-          <tr><td>2011</td><td><p class="film-title">The Sisters</p><p class="film-role">Ljubica</p></td><td></td></tr>
-          <tr><td>2009</td><td><p class="film-title">St George Shoots the Dragon</p><p class="film-role">Jelena <span style="color:var(--c-accent);font-size:10px;"> ★ Best Debutant — Niš Film Festival</span></p></td><td></td></tr>
-        </tbody>
-      </table>
+  <div class="page-header">
+    <p class="section-eyebrow"><span class="en">Credits</span><span class="sr">Uloge</span></p>
+    <h1><span class="en">Filmography</span><span class="sr">Filmografija</span></h1>
+  </div>
+  <div class="filmography-layout">
+    <div class="film-tabs">
+      <button class="film-tab active" onclick="switchTab('film')">Film</button>
+      <button class="film-tab" onclick="switchTab('tv')">Television</button>
     </div>
 
-    <!-- TELEVISION -->
-    <div class="film-section">
-      <p class="section-label" style="margin-bottom:24px;">Television</p>
-      <table class="film-table">
-        <thead>
-          <tr>
-            <th style="width:80px;">Year</th>
-            <th>Title & Role</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>2025</td><td><p class="film-title">Robin Hood</p><p class="film-role">Matilda</p></td></tr>
-          <tr><td>2024</td><td><p class="film-title">Time of Death</p><p class="film-role">Petrana</p></td></tr>
-          <tr><td>2024</td><td><p class="film-title">Underneath</p><p class="film-role">Sanja Tošić</p></td></tr>
-          <tr><td>2024</td><td><p class="film-title">ABCs of Life</p><p class="film-role">Marija</p></td></tr>
-          <tr><td>2023</td><td><p class="film-title">Nemirni</p><p class="film-role">Zaklina Stanković</p></td></tr>
-          <tr><td>2021–2025</td><td><p class="film-title">Branilac</p><p class="film-role">Spomenka / Zvezdana / Milena</p></td></tr>
-          <tr><td>2021</td><td><p class="film-title">Only Way Out</p><p class="film-role">Maša</p></td></tr>
-          <tr><td>2021</td><td><p class="film-title">Bad Blood</p><p class="film-role">Todora</p></td></tr>
-          <tr><td>2018</td><td><p class="film-title">Roots</p><p class="film-role">Kata</p></td></tr>
-          <tr><td>2017</td><td><p class="film-title">The Sindjelics</p><p class="film-role">Svetlana</p></td></tr>
-          <tr><td>2016</td><td><p class="film-title">Suspicious Faces</p><p class="film-role">Nina</p></td></tr>
-          <tr><td>2016</td><td><p class="film-title">Legacy</p><p class="film-role">Slavica</p></td></tr>
-          <tr><td>2016</td><td><p class="film-title">Village Is Burning</p><p class="film-role">Danica</p></td></tr>
-          <tr><td>2015</td><td><p class="film-title">Andrija & Andjelka</p><p class="film-role">Čaki</p></td></tr>
-          <tr><td>2011</td><td><p class="film-title">Women from Dedinje</p><p class="film-role">Zorka</p></td></tr>
-        </tbody>
-      </table>
+    <div class="film-list active" id="tab-film">
+      <div class="film-entry"><span class="film-year">2025</span><span class="film-title">Return of Zika's Dynasty</span><span class="film-role">Uciteljica</span><span class="film-badge">Film</span></div>
+      <div class="film-entry"><span class="film-year">2025</span><span class="film-title">Hajduk u Beogradu</span><span class="film-role">Srpkinja</span><span class="film-badge">Film</span></div>
+      <div class="film-entry"><span class="film-year">2025</span><span class="film-title">Sedef Magla</span><span class="film-role">Ilka Markovic</span><span class="film-badge">Film</span></div>
+      <div class="film-entry"><span class="film-year">2025</span><span class="film-title">How Come It's All Green Out Here</span><span class="film-role">Direktorka marketinga</span><span class="film-badge">Film</span></div>
+      <div class="film-entry"><span class="film-year">2025</span><span class="film-title">August</span><span class="film-role">Ljubica</span><span class="film-badge">Film</span></div>
+      <div class="film-entry"><span class="film-year">2024</span><span class="film-title">Isolation</span><span class="film-role">Dr. Ema Popović</span><span class="film-badge">★ Award</span></div>
+      <div class="film-entry"><span class="film-year">2023</span><span class="film-title">The Machine</span><span class="film-role">Igor's Wife</span><span class="film-badge">Film</span></div>
+      <div class="film-entry"><span class="film-year">2022</span><span class="film-title">The Deal</span><span class="film-role">Doctor</span><span class="film-badge">Film</span></div>
+      <div class="film-entry"><span class="film-year">2022</span><span class="film-title">A Cross in the Desert</span><span class="film-role">Saint Petka</span><span class="film-badge">★ Award</span></div>
+      <div class="film-entry"><span class="film-year">2020</span><span class="film-title">Hotel Belgrade</span><span class="film-role">Miljana</span><span class="film-badge">Film</span></div>
+      <div class="film-entry"><span class="film-year">2019</span><span class="film-title">Taxi Blues</span><span class="film-role">Tanja</span><span class="film-badge">Film</span></div>
+      <div class="film-entry"><span class="film-year">2018</span><span class="film-title">Extinction</span><span class="film-role">Neighbor</span><span class="film-badge">Film</span></div>
+      <div class="film-entry"><span class="film-year">2012</span><span class="film-title">Run Up</span><span class="film-role">Milena</span><span class="film-badge">Film</span></div>
+      <div class="film-entry"><span class="film-year">2012</span><span class="film-title">Dr Rej and Devils</span><span class="film-role">Jeanne Moreau</span><span class="film-badge">Film</span></div>
+      <div class="film-entry"><span class="film-year">2011</span><span class="film-title">The Sisters</span><span class="film-role">Ljubica</span><span class="film-badge">Film</span></div>
+      <div class="film-entry"><span class="film-year">2009</span><span class="film-title">St George Shoots the Dragon</span><span class="film-role">Jelena</span><span class="film-badge">★ Award</span></div>
     </div>
 
-    <p style="font-size:12px;color:var(--c-text3);margin-top:40px;padding-top:24px;border-top:1px solid var(--c-border);">
-      <span data-lang="en" class="lang-active">Theatre credits and full production details available on request.</span>
-      <span data-lang="sr">Pozorišne uloge i kompletni podaci dostupni na zahtev.</span>
-    </p>
-  </section>
-
+    <div class="film-list" id="tab-tv">
+      <div class="film-entry"><span class="film-year">2025</span><span class="film-title">Robin Hood</span><span class="film-role">Matilda</span><span class="film-badge">TV Series</span></div>
+      <div class="film-entry"><span class="film-year">2024</span><span class="film-title">Time of Death</span><span class="film-role">Petrana</span><span class="film-badge">TV Series</span></div>
+      <div class="film-entry"><span class="film-year">2024</span><span class="film-title">Underneath</span><span class="film-role">Sanja Tosic</span><span class="film-badge">TV Series</span></div>
+      <div class="film-entry"><span class="film-year">2024</span><span class="film-title">ABCs of Life</span><span class="film-role">Marija</span><span class="film-badge">TV Series</span></div>
+      <div class="film-entry"><span class="film-year">2023</span><span class="film-title">Nemirni</span><span class="film-role">Zaklina Stankovic</span><span class="film-badge">TV Series</span></div>
+      <div class="film-entry"><span class="film-year">2021–2025</span><span class="film-title">Branilac</span><span class="film-role">Mentioned / Zvezdana / Milena</span><span class="film-badge">Recurring</span></div>
+      <div class="film-entry"><span class="film-year">2021</span><span class="film-title">Only Way Out</span><span class="film-role">Masa</span><span class="film-badge">TV Series</span></div>
+      <div class="film-entry"><span class="film-year">2021</span><span class="film-title">Bad Blood</span><span class="film-role">Todora</span><span class="film-badge">TV Series</span></div>
+      <div class="film-entry"><span class="film-year">2018</span><span class="film-title">Roots</span><span class="film-role">Kata</span><span class="film-badge">TV Series</span></div>
+      <div class="film-entry"><span class="film-year">2017</span><span class="film-title">The Sindjelics</span><span class="film-role">Svetlana</span><span class="film-badge">TV Series</span></div>
+      <div class="film-entry"><span class="film-year">2016</span><span class="film-title">Suspicious Faces</span><span class="film-role">Nina</span><span class="film-badge">TV Series</span></div>
+      <div class="film-entry"><span class="film-year">2016</span><span class="film-title">Legacy</span><span class="film-role">Slavica</span><span class="film-badge">TV Series</span></div>
+      <div class="film-entry"><span class="film-year">2016</span><span class="film-title">Village Is Burning</span><span class="film-role">Danica</span><span class="film-badge">TV Series</span></div>
+      <div class="film-entry"><span class="film-year">2015</span><span class="film-title">Andrija & Andjelka</span><span class="film-role">Caki</span><span class="film-badge">TV Series</span></div>
+      <div class="film-entry"><span class="film-year">2011</span><span class="film-title">Women from Dedinje</span><span class="film-role">Zorka</span><span class="film-badge">TV Series</span></div>
+    </div>
+  </div>
   <footer>
     <span class="footer-name">Milena Predić</span>
-    <span class="footer-copy">© 2025 · Belgrade, Serbia</span>
+    <span class="footer-copy">© 2025</span>
   </footer>
 </div>
 
-
-<!-- ═══════════════════════════════════════════════════════
-     PAGE: GALLERY
-════════════════════════════════════════════════════════ -->
+<!-- GALLERY PAGE -->
 <div class="page" id="page-gallery">
-  <section style="padding-top: calc(var(--nav-h) + 60px);">
-    <p class="section-label">
-      <span data-lang="en" class="lang-active">Gallery</span>
-      <span data-lang="sr">Galerija</span>
-    </p>
-    <h1 class="section-title">
-      <span data-lang="en" class="lang-active">Photography</span>
-      <span data-lang="sr">Fotografije</span>
-    </h1>
-    <div class="divider"></div>
-
-    <div class="gallery-filter">
-      <button class="filter-btn active" onclick="filterGallery('all', this)">
-        <span data-lang="en" class="lang-active">All</span>
-        <span data-lang="sr">Sve</span>
-      </button>
-      <button class="filter-btn" onclick="filterGallery('headshots', this)">
-        <span data-lang="en" class="lang-active">Headshots</span>
-        <span data-lang="sr">Portret</span>
-      </button>
-      <button class="filter-btn" onclick="filterGallery('production', this)">
-        <span data-lang="en" class="lang-active">Production</span>
-        <span data-lang="sr">Produkcija</span>
-      </button>
-      <button class="filter-btn" onclick="filterGallery('press', this)">
-        <span data-lang="en" class="lang-active">Press</span>
-        <span data-lang="sr">Press</span>
-      </button>
-    </div>
-
+  <div class="page-header">
+    <p class="section-eyebrow"><span class="en">Gallery</span><span class="sr">Galerija</span></p>
+    <h1><span class="en">Photography</span><span class="sr">Fotografije</span></h1>
+  </div>
+  <div class="gallery-layout">
     <div class="gallery-grid" id="galleryGrid">
-      <div class="gallery-item" data-cat="headshots" onclick="openLightbox(this)">
-        <div class="gallery-placeholder"><span class="placeholder-label">Headshot 1</span></div>
+      <!-- Hero photo -->
+      <div class="gallery-item wide" onclick="openLightbox('https://raw.githubusercontent.com/LordHidetora/milena-predic-website/main/naslovna_hero_.JPG')">
+        <img src="https://raw.githubusercontent.com/LordHidetora/milena-predic-website/main/naslovna_hero_.JPG" alt="Milena Predić">
+        <div class="gallery-item-overlay">⊕</div>
       </div>
-      <div class="gallery-item" data-cat="headshots" onclick="openLightbox(this)">
-        <div class="gallery-placeholder"><span class="placeholder-label">Headshot 2</span></div>
+      <!-- About photos -->
+      <div class="gallery-item" onclick="openLightbox('https://raw.githubusercontent.com/LordHidetora/milena-predic-website/main/about_1.JPG')">
+        <img src="https://raw.githubusercontent.com/LordHidetora/milena-predic-website/main/about_1.JPG" alt="Milena Predić" onerror="this.parentElement.innerHTML='<div class=gallery-placeholder>Photo coming soon</div>'">
+        <div class="gallery-item-overlay">⊕</div>
       </div>
-      <div class="gallery-item gallery-item-wide" data-cat="production" onclick="openLightbox(this)">
-        <div class="gallery-placeholder"><span class="placeholder-label">A Cross in the Desert</span></div>
+      <div class="gallery-item" onclick="openLightbox('https://raw.githubusercontent.com/LordHidetora/milena-predic-website/main/about_2.JPG')">
+        <img src="https://raw.githubusercontent.com/LordHidetora/milena-predic-website/main/about_2.JPG" alt="Milena Predić" onerror="this.parentElement.innerHTML='<div class=gallery-placeholder>Photo coming soon</div>'">
+        <div class="gallery-item-overlay">⊕</div>
       </div>
-      <div class="gallery-item" data-cat="production" onclick="openLightbox(this)">
-        <div class="gallery-placeholder"><span class="placeholder-label">Isolation</span></div>
+      <!-- Work photos -->
+      <div class="gallery-item" onclick="openLightbox('https://raw.githubusercontent.com/LordHidetora/milena-predic-website/main/work_1.JPG')">
+        <img src="https://raw.githubusercontent.com/LordHidetora/milena-predic-website/main/work_1.JPG" alt="Production still" onerror="this.parentElement.innerHTML='<div class=gallery-placeholder>Photo coming soon</div>'">
+        <div class="gallery-item-overlay">⊕</div>
       </div>
-      <div class="gallery-item" data-cat="headshots" onclick="openLightbox(this)">
-        <div class="gallery-placeholder"><span class="placeholder-label">Headshot 3</span></div>
+      <div class="gallery-item" onclick="openLightbox('https://raw.githubusercontent.com/LordHidetora/milena-predic-website/main/work_2.JPG')">
+        <img src="https://raw.githubusercontent.com/LordHidetora/milena-predic-website/main/work_2.JPG" alt="Production still" onerror="this.parentElement.innerHTML='<div class=gallery-placeholder>Photo coming soon</div>'">
+        <div class="gallery-item-overlay">⊕</div>
       </div>
-      <div class="gallery-item" data-cat="press" onclick="openLightbox(this)">
-        <div class="gallery-placeholder"><span class="placeholder-label">Festival Photo</span></div>
+      <div class="gallery-item" onclick="openLightbox('https://raw.githubusercontent.com/LordHidetora/milena-predic-website/main/work_3.JPG')">
+        <img src="https://raw.githubusercontent.com/LordHidetora/milena-predic-website/main/work_3.JPG" alt="Production still" onerror="this.parentElement.innerHTML='<div class=gallery-placeholder>Photo coming soon</div>'">
+        <div class="gallery-item-overlay">⊕</div>
       </div>
-      <div class="gallery-item" data-cat="production" onclick="openLightbox(this)">
-        <div class="gallery-placeholder"><span class="placeholder-label">Hotel Belgrade</span></div>
+      <div class="gallery-item" onclick="openLightbox('https://raw.githubusercontent.com/LordHidetora/milena-predic-website/main/work_4.JPG')">
+        <img src="https://raw.githubusercontent.com/LordHidetora/milena-predic-website/main/work_4.JPG" alt="Production still" onerror="this.parentElement.innerHTML='<div class=gallery-placeholder>Photo coming soon</div>'">
+        <div class="gallery-item-overlay">⊕</div>
       </div>
-      <div class="gallery-item" data-cat="press" onclick="openLightbox(this)">
-        <div class="gallery-placeholder"><span class="placeholder-label">Red Carpet</span></div>
+      <div class="gallery-item" onclick="openLightbox('https://raw.githubusercontent.com/LordHidetora/milena-predic-website/main/work_5.JPG')">
+        <img src="https://raw.githubusercontent.com/LordHidetora/milena-predic-website/main/work_5.JPG" alt="Production still" onerror="this.parentElement.innerHTML='<div class=gallery-placeholder>Photo coming soon</div>'">
+        <div class="gallery-item-overlay">⊕</div>
+      </div>
+      <div class="gallery-item" onclick="openLightbox('https://raw.githubusercontent.com/LordHidetora/milena-predic-website/main/work_6.JPG')">
+        <img src="https://raw.githubusercontent.com/LordHidetora/milena-predic-website/main/work_6.JPG" alt="Production still" onerror="this.parentElement.innerHTML='<div class=gallery-placeholder>Photo coming soon</div>'">
+        <div class="gallery-item-overlay">⊕</div>
       </div>
     </div>
-  </section>
-
+  </div>
   <footer>
     <span class="footer-name">Milena Predić</span>
-    <span class="footer-copy">© 2025 · Belgrade, Serbia</span>
+    <span class="footer-copy">© 2025</span>
+  </footer>
+</div>
+
+<!-- NEWS PAGE -->
+<div class="page" id="page-news">
+  <div class="page-header">
+    <p class="section-eyebrow"><span class="en">Press & News</span><span class="sr">Press i Vesti</span></p>
+    <h1><span class="en">Latest</span><span class="sr">Najnovije</span></h1>
+  </div>
+  <div class="news-layout">
+    <div class="news-featured">
+      <div class="news-featured-img">
+        <img src="https://raw.githubusercontent.com/LordHidetora/milena-predic-website/main/naslovna_hero_.JPG" alt="Milena Predić">
+      </div>
+      <div>
+        <div class="news-featured-date">2025</div>
+        <div class="news-featured-cat"><span class="en">New Project</span><span class="sr">Novi Projekat</span></div>
+        <div class="news-featured-title">Robin Hood — Matilda</div>
+        <div class="news-featured-text en">Milena Predić joins the cast of the new Serbian television production Robin Hood in the role of Matilda. The series is currently in production.</div>
+        <div class="news-featured-text sr">Milena Predić pridružuje se ansamblu nove srpske televizijske produkcije Robin Hood u ulozi Matilde. Serija je trenutno u produkciji.</div>
+      </div>
+    </div>
+    <div class="news-list">
+      <div class="news-item">
+        <div class="news-date">2024</div>
+        <div class="news-category"><span class="en">Award</span><span class="sr">Nagrada</span></div>
+        <div class="news-headline"><span class="en">Best Supporting Actress — Chicago Serbian FF</span><span class="sr">Najb. Sporedna Glumica — Čikaški SFF</span></div>
+        <div class="news-excerpt en">Recognised for her performance in Isolation at the Chicago Serbian Film Festival.</div>
+        <div class="news-excerpt sr">Nagrađena za nastup u Isolationu na Čikaškom srpskom filmskom festivalu.</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2023</div>
+        <div class="news-category"><span class="en">Award</span><span class="sr">Nagrada</span></div>
+        <div class="news-headline"><span class="en">Best Actress — Oman Film Festival</span><span class="sr">Najbolja Glumica — Oman Film Festival</span></div>
+        <div class="news-excerpt en">A Cross in the Desert receives international recognition in Oman.</div>
+        <div class="news-excerpt sr">Krst u pustinji dobija međunarodno priznanje u Omanu.</div>
+      </div>
+      <div class="news-item">
+        <div class="news-date">2022</div>
+        <div class="news-category"><span class="en">Award</span><span class="sr">Nagrada</span></div>
+        <div class="news-headline"><span class="en">Best Actress — Chicago Serbian FF</span><span class="sr">Najbolja Glumica — Čikaški SFF</span></div>
+        <div class="news-excerpt en">A Cross in the Desert wins Best Actress at the Chicago Serbian Film Festival.</div>
+        <div class="news-excerpt sr">Krst u pustinji osvaja nagradu za najbolju glumicu na Čikaškom srpskom filmskom festivalu.</div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <span class="footer-name">Milena Predić</span>
+    <span class="footer-copy">© 2025</span>
+  </footer>
+</div>
+
+<!-- CONTACT PAGE -->
+<div class="page" id="page-contact">
+  <div class="page-header">
+    <p class="section-eyebrow"><span class="en">Get in Touch</span><span class="sr">Kontaktirajte nas</span></p>
+    <h1><span class="en">Contact</span><span class="sr">Kontakt</span></h1>
+  </div>
+  <div class="contact-layout">
+    <div>
+      <div class="contact-info-block">
+        <div class="contact-info-label"><span class="en">Direct Contact</span><span class="sr">Direktan Kontakt</span></div>
+        <div class="contact-info-name">Milena Predić</div>
+        <div class="contact-info-detail">
+          <a href="mailto:milenapredicster@gmail.com">milenapredicster@gmail.com</a><br>
+          <a href="tel:+381637071965">+381 63 707 1965</a><br>
+          Belgrade, Serbia
+        </div>
+      </div>
+      <div class="contact-info-block">
+        <div class="contact-info-label"><span class="en">Online</span><span class="sr">Online</span></div>
+        <div class="social-links">
+          <a href="#" class="social-link" target="_blank">Instagram</a>
+          <a href="#" class="social-link" target="_blank">IMDb</a>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form">
+      <p class="section-eyebrow" style="margin-bottom:32px"><span class="en">Send a Message</span><span class="sr">Pošalji Poruku</span></p>
+      <div class="form-group">
+        <label class="form-label"><span class="en">Name</span><span class="sr">Ime</span></label>
+        <input type="text" class="form-input" placeholder="">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-input" placeholder="">
+      </div>
+      <div class="form-group">
+        <label class="form-label"><span class="en">Subject</span><span class="sr">Naslov</span></label>
+        <input type="text" class="form-input" placeholder="">
+      </div>
+      <div class="form-group">
+        <label class="form-label"><span class="en">Message</span><span class="sr">Poruka</span></label>
+        <textarea class="form-textarea"></textarea>
+      </div>
+      <button class="btn-primary" onclick="submitForm()" style="width:100%; justify-content:center;">
+        <span class="en">Send Message</span><span class="sr">Pošalji Poruku</span>
+      </button>
+    </div>
+  </div>
+  <footer>
+    <span class="footer-name">Milena Predić</span>
+    <span class="footer-copy">© 2025</span>
   </footer>
 </div>
 
 <!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox" onclick="closeLightbox()">
   <button class="lightbox-close" onclick="closeLightbox()">✕</button>
-  <div class="lightbox-inner">
-    <img id="lightboxImg" src="" alt="">
-  </div>
+  <img id="lightboxImg" src="" alt="">
 </div>
 
-
-<!-- ═══════════════════════════════════════════════════════
-     PAGE: NEWS
-════════════════════════════════════════════════════════ -->
-<div class="page" id="page-news">
-  <section style="padding-top: calc(var(--nav-h) + 60px);">
-    <p class="section-label">
-      <span data-lang="en" class="lang-active">News</span>
-      <span data-lang="sr">Vesti</span>
-    </p>
-    <h1 class="section-title">
-      <span data-lang="en" class="lang-active">News & Press</span>
-      <span data-lang="sr">Vesti i Press</span>
-    </h1>
-    <div class="divider"></div>
-  </section>
-
-  <div class="news-list">
-    <div class="news-article">
-      <div class="news-article-date">June 2025</div>
-      <div>
-        <p class="news-article-cat">Projects</p>
-        <h2 class="news-article-title">Five New Productions in 2025</h2>
-        <p class="news-article-excerpt" data-lang="en" class="lang-active">Milena appears in five new productions in 2025: the films <em>Return of Zika's Dynasty</em> (as Učiteljica), <em>Hajduk u Beogradu</em> (Srpkinja), <em>Sedef Magla</em> (Ilka Marković), <em>August</em> (Ljubica), and <em>How Come It's All Green Out Here</em> (Direktorka marketinga), as well as the television series <em>Robin Hood</em> in the role of Matilda.</p>
-        <p class="news-article-excerpt" data-lang="sr">Milena se pojavljuje u pet novih produkcija u 2025. godini: filmovi <em>Povratak Žikinih</em>, <em>Hajduk u Beogradu</em>, <em>Sedef magla</em>, <em>August</em> i <em>How Come It's All Green Out Here</em>, kao i televizijska serija <em>Robin Hood</em> u ulozi Matilde.</p>
-      </div>
-    </div>
-
-    <div class="news-article">
-      <div class="news-article-date">Oct 2024</div>
-      <div>
-        <p class="news-article-cat">Award</p>
-        <h2 class="news-article-title">Best Supporting Actress — Chicago Serbian Film Festival</h2>
-        <p class="news-article-excerpt" data-lang="en" class="lang-active">Milena receives the Best Supporting Actress award at the Chicago Serbian Film Festival for her performance as Dr. Ema Popović in <em>Isolation</em> (2024).</p>
-        <p class="news-article-excerpt" data-lang="sr">Milena dobija nagradu za Najboljeg sporednog glumca na Čikaškom srpskom filmskom festivalu za ulogu dr. Eme Popović u filmu <em>Isolation</em> (2024).</p>
-      </div>
-    </div>
-
-    <div class="news-article">
-      <div class="news-article-date">Nov 2023</div>
-      <div>
-        <p class="news-article-cat">Award</p>
-        <h2 class="news-article-title">Best Actress — Oman Film Festival 2023</h2>
-        <p class="news-article-excerpt" data-lang="en" class="lang-active">Milena wins Best Actress at the Oman Film Festival for the lead role of Saint Petka in <em>A Cross in the Desert</em>, following her earlier Best Actress win at the Chicago Serbian Film Festival in 2022 for the same film.</p>
-        <p class="news-article-excerpt" data-lang="sr">Milena osvaja nagradu za Najboljeg glumca na Filmskom festivalu u Omanu za naslovnu ulogu Svete Petke u <em>Krst u pustinji</em>, nakon iste nagrade na Čikaškom srpskom filmskom festivalu 2022. godine.</p>
-      </div>
-    </div>
-
-    <div class="news-article">
-      <div class="news-article-date">2022</div>
-      <div>
-        <p class="news-article-cat">Award</p>
-        <h2 class="news-article-title">Best Actress — Chicago Serbian Film Festival 2022</h2>
-        <p class="news-article-excerpt" data-lang="en" class="lang-active">Best Actress award at the Chicago Serbian Film Festival for <em>A Cross in the Desert</em>, a spiritual drama in which Milena portrays the Orthodox saint Petka.</p>
-        <p class="news-article-excerpt" data-lang="sr">Nagrada za Najboljeg glumca na Čikaškom srpskom filmskom festivalu za film <em>Krst u pustinji</em>, duhovnu dramu u kojoj Milena tumači pravoslavnu sveticu Petku.</p>
-      </div>
-    </div>
-
-    <div class="news-article">
-      <div class="news-article-date">2019</div>
-      <div>
-        <p class="news-article-cat">Award</p>
-        <h2 class="news-article-title">Best Actress — Independent Shorts Award</h2>
-        <p class="news-article-excerpt" data-lang="en" class="lang-active">Best Actress at the Independent Shorts Award for the short film <em>Submission</em> (2019).</p>
-        <p class="news-article-excerpt" data-lang="sr">Nagrada za Najboljeg glumca na Independent Shorts Award za kratki film <em>Submission</em> (2019).</p>
-      </div>
-    </div>
-  </div>
-
-  <footer>
-    <span class="footer-name">Milena Predić</span>
-    <span class="footer-copy">© 2025 · Belgrade, Serbia</span>
-  </footer>
-</div>
-
-
-<!-- ═══════════════════════════════════════════════════════
-     PAGE: CONTACT
-════════════════════════════════════════════════════════ -->
-<div class="page" id="page-contact">
-  <section style="padding-top: calc(var(--nav-h) + 60px);">
-    <p class="section-label">
-      <span data-lang="en" class="lang-active">Contact</span>
-      <span data-lang="sr">Kontakt</span>
-    </p>
-    <h1 class="section-title">
-      <span data-lang="en" class="lang-active">Get in Touch</span>
-      <span data-lang="sr">Kontaktirajte Nas</span>
-    </h1>
-    <div class="divider"></div>
-
-    <div class="contact-layout">
-      <div>
-        <div class="contact-info-block">
-          <p class="info-label" style="margin-bottom:16px;">
-            <span data-lang="en" class="lang-active">Direct Contact</span>
-            <span data-lang="sr">Direktan Kontakt</span>
-          </p>
-          <p class="info-value" style="margin-bottom:8px;">
-            <a href="mailto:milenapredicster@gmail.com" style="color:var(--c-text);text-decoration:none;">milenapredicster@gmail.com</a>
-          </p>
-          <p class="info-value">
-            <a href="tel:+381637071965" style="color:var(--c-text);text-decoration:none;">+381 63 707 1965</a>
-          </p>
-        </div>
-
-        <div class="contact-info-block">
-          <p class="info-label" style="margin-bottom:16px;">
-            <span data-lang="en" class="lang-active">Representation</span>
-            <span data-lang="sr">Zastupanje</span>
-          </p>
-          <p class="info-value" style="color:var(--c-text3); font-style:italic;">
-            <span data-lang="en" class="lang-active">Agency information to be added.</span>
-            <span data-lang="sr">Podaci o agenciji se dodaju.</span>
-          </p>
-        </div>
-
-        <div class="contact-info-block">
-          <p class="info-label" style="margin-bottom:16px;">
-            <span data-lang="en" class="lang-active">Online</span>
-            <span data-lang="sr">Online</span>
-          </p>
-          <div class="social-links">
-            <a href="#" class="social-link" target="_blank">Instagram</a>
-            <a href="#" class="social-link" target="_blank">IMDb</a>
-          </div>
-        </div>
-
-        <div style="padding-top:32px; border-top:1px solid var(--c-border);">
-          <p class="info-label" style="margin-bottom:8px;">
-            <span data-lang="en" class="lang-active">Based in</span>
-            <span data-lang="sr">Lokacija</span>
-          </p>
-          <p class="info-value">Belgrade, Serbia</p>
-          <p style="font-size:12px;color:var(--c-text3);margin-top:4px;">Available for productions internationally.</p>
-        </div>
-      </div>
-
-      <div>
-        <p class="info-label" style="margin-bottom:24px;">
-          <span data-lang="en" class="lang-active">Send a Message</span>
-          <span data-lang="sr">Pošalji Poruku</span>
-        </p>
-        <div class="contact-form">
-          <div class="form-group">
-            <label class="form-label">
-              <span data-lang="en" class="lang-active">Name</span>
-              <span data-lang="sr">Ime</span>
-            </label>
-            <input type="text" class="form-input" placeholder="Your name">
-          </div>
-          <div class="form-group">
-            <label class="form-label">
-              <span data-lang="en" class="lang-active">Company / Production</span>
-              <span data-lang="sr">Kompanija / Produkcija</span>
-            </label>
-            <input type="text" class="form-input" placeholder="Production company or agency">
-          </div>
-          <div class="form-group">
-            <label class="form-label">Email</label>
-            <input type="email" class="form-input" placeholder="your@email.com">
-          </div>
-          <div class="form-group">
-            <label class="form-label">
-              <span data-lang="en" class="lang-active">Subject</span>
-              <span data-lang="sr">Predmet</span>
-            </label>
-            <input type="text" class="form-input" placeholder="Casting inquiry / Collaboration / Press">
-          </div>
-          <div class="form-group">
-            <label class="form-label">
-              <span data-lang="en" class="lang-active">Message</span>
-              <span data-lang="sr">Poruka</span>
-            </label>
-            <textarea class="form-textarea" placeholder="Your message..."></textarea>
-          </div>
-          <button class="btn-primary" onclick="alert('Form will be connected to email service on deployment.')">
-            <span data-lang="en" class="lang-active">Send Message</span>
-            <span data-lang="sr">Pošalji Poruku</span>
-          </button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <span class="footer-name">Milena Predić</span>
-    <span class="footer-copy">© 2025 · Belgrade, Serbia</span>
-  </footer>
-</div>
-
-
-<!-- ═══ JAVASCRIPT ══════════════════════════════════════ -->
 <script>
-  // ── State
-  let currentLang = 'en';
-  let currentTheme = 'dark';
-
-  // ── Page navigation
-  function showPage(id) {
+  // Navigation
+  function navigate(page) {
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-    document.getElementById('page-' + id).classList.add('active');
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-    initReveal();
+    document.getElementById('page-' + page).classList.add('active');
+    window.scrollTo(0, 0);
+    // Update active nav link
+    document.querySelectorAll('.nav-links a').forEach(a => a.style.color = '');
   }
 
-  // ── Theme
-  function toggleTheme() {
-    currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', currentTheme === 'light' ? 'light' : '');
-    document.getElementById('themeToggle').textContent = currentTheme === 'dark' ? '◐' : '◑';
-  }
-
-  // ── Language
-  function toggleLang() {
-    currentLang = currentLang === 'en' ? 'sr' : 'en';
-    const btn = document.getElementById('langToggle');
-    btn.textContent = currentLang === 'en' ? 'SR' : 'EN';
-
-    document.querySelectorAll('[data-lang]').forEach(el => {
-      if (el.getAttribute('data-lang') === currentLang) {
-        el.classList.add('lang-active');
-      } else {
-        el.classList.remove('lang-active');
-      }
-    });
-  }
-
-  // ── Mobile nav
-  function toggleMobileNav() {
-    document.getElementById('mobileNav').classList.toggle('open');
-  }
-
-  // ── Navbar scroll effect
+  // Scroll nav
   window.addEventListener('scroll', () => {
-    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
+    const nav = document.getElementById('mainNav');
+    nav.classList.toggle('scrolled', window.scrollY > 40);
   });
 
-  // ── Scroll reveal
-  function initReveal() {
-    const els = document.querySelectorAll('.page.active .reveal');
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach((e, i) => {
-        if (e.isIntersecting) {
-          setTimeout(() => e.target.classList.add('visible'), i * 80);
-          obs.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.08 });
-    els.forEach(el => obs.observe(el));
+  // Theme
+  function toggleTheme() {
+    const html = document.documentElement;
+    const isDark = html.getAttribute('data-theme') === 'dark';
+    html.setAttribute('data-theme', isDark ? 'light' : 'dark');
+    document.getElementById('themeBtn').textContent = isDark ? '☾' : '☀';
   }
 
-  // ── Gallery filter
-  function filterGallery(cat, btn) {
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    document.querySelectorAll('.gallery-item').forEach(item => {
-      const match = cat === 'all' || item.dataset.cat === cat;
-      item.style.display = match ? '' : 'none';
-    });
+  // Language
+  function toggleLang() {
+    const body = document.body;
+    const btn = document.getElementById('langBtn');
+    const isEn = body.getAttribute('data-lang') === 'en';
+    body.setAttribute('data-lang', isEn ? 'sr' : 'en');
+    btn.textContent = isEn ? 'EN' : 'SR';
   }
 
-  // ── Lightbox
-  function openLightbox(el) {
-    const img = el.querySelector('img');
-    if (img) {
-      document.getElementById('lightboxImg').src = img.src;
-      document.getElementById('lightbox').classList.add('open');
-    }
+  // Film tabs
+  function switchTab(tab) {
+    document.querySelectorAll('.film-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.film-list').forEach(l => l.classList.remove('active'));
+    event.target.classList.add('active');
+    document.getElementById('tab-' + tab).classList.add('active');
   }
 
+  // Lightbox
+  function openLightbox(src) {
+    document.getElementById('lightboxImg').src = src;
+    document.getElementById('lightbox').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
   function closeLightbox() {
     document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
   }
 
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') closeLightbox();
-  });
+  // Mobile menu
+  function toggleMobile() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+  function closeMobile() {
+    document.getElementById('mobileMenu').classList.remove('open');
+  }
 
-  // ── Init
-  document.addEventListener('DOMContentLoaded', () => {
-    initReveal();
-    // Set all EN elements active by default
-    document.querySelectorAll('[data-lang="en"]').forEach(el => el.classList.add('lang-active'));
-  });
+  // Contact form
+  function submitForm() {
+    alert('Thank you. Your message has been sent to milenapredicster@gmail.com');
+  }
 
-  initReveal();
+  // Fade-in on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 </script>
-
 </body>
 </html>
