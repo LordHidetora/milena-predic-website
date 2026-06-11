@@ -87,7 +87,6 @@
     color: var(--text);
     text-decoration: none;
     cursor: pointer;
-    margin-right: 48px;
   }
   .nav-links {
     display: flex;
@@ -1508,7 +1507,7 @@
     <div class="clips-grid">
       <div class="clip-item">
         <div class="video-wrapper" style="margin-bottom:16px">
-          <iframe src="https://player.vimeo.com/video/342962584?title=0&byline=0&portrait=0" allowfullscreen allow="autoplay; fullscreen"></iframe>
+          <iframe src="https://player.vimeo.com/video/342962584?badge=0&autopause=0&player_id=0&app_id=58479" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen frameborder="0"></iframe>
         </div>
         <div class="clip-title">Submission</div>
         <div class="clip-meta"><span class="en">Short Film · 2019 · Best Actress Award</span><span class="sr">Kratki film · 2019 · Nagrada za Najbolju Glumicu</span></div>
@@ -1521,11 +1520,14 @@
         <div class="clip-meta"><span class="en">Film · 2019 · Trailer</span><span class="sr">Film · 2019 · Trejler</span></div>
       </div>
       <div class="clip-item">
-        <div class="video-wrapper" style="margin-bottom:16px">
-          <iframe src="https://www.youtube.com/embed/d54-phvVvgU" allowfullscreen allow="autoplay; fullscreen"></iframe>
+        <div class="clip-thumb" style="display:flex; flex-direction:column; align-items:center; justify-content:center; gap:16px; background:#111; border:1px solid var(--border);">
+          <div class="clip-play">▶</div>
+          <a href="https://www.youtube.com/watch?v=d54-phvVvgU" target="_blank" class="btn-outline" style="color:var(--text); border-color:var(--border); font-size:10px; padding:10px 20px;">
+            <span class="en">Watch on YouTube</span><span class="sr">Gledaj na YouTube</span>
+          </a>
         </div>
-        <div class="clip-title">St George Shoots the Dragon</div>
-        <div class="clip-meta"><span class="en">Film · 2009 · Trailer · Best Debutant Award</span><span class="sr">Film · 2009 · Trejler · Nagrada za Najboljeg Debitanta</span></div>
+        <div class="clip-title" style="margin-top:16px">St George Shoots the Dragon</div>
+        <div class="clip-meta"><span class="en">Film · 2009 · Trailer · Best Debutant Award</span><span class="sr">Film · 2009 · Trejler</span></div>
       </div>
     </div>
   </div>
