@@ -788,6 +788,33 @@
 
   /* GALLERY */
   .gallery-layout { padding: 80px 64px; }
+  .gallery-tabs {
+    display: flex;
+    gap: 0;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 48px;
+  }
+  .gallery-tab {
+    padding: 16px 32px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: all 0.2s;
+    background: none;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    font-family: 'Inter', sans-serif;
+    margin-bottom: -1px;
+  }
+  .gallery-tab.active { color: var(--text); border-bottom-color: var(--accent); }
+  .gallery-tab:hover { color: var(--text); }
+  .gallery-section { display: none; }
+  .gallery-section.active { display: block; }
   .gallery-grid {
     display: flex;
     flex-wrap: wrap;
@@ -795,7 +822,7 @@
   }
   .gallery-item {
     flex: 1 1 auto;
-    height: 400px;
+    height: 380px;
     overflow: hidden;
     cursor: pointer;
     position: relative;
@@ -821,16 +848,6 @@
     color: rgba(255,255,255,0.7);
   }
   .gallery-item:hover .gallery-item-overlay { opacity: 1; }
-  .gallery-placeholder {
-    width: 100%; height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-faint);
-    font-size: 13px;
-    letter-spacing: 0.08em;
-    background: var(--bg-secondary);
-  }
 
   /* SHOWREEL PAGE */
   .showreel-layout { padding: 80px 64px; }
@@ -1596,60 +1613,74 @@
     <h1><span class="en">Photography</span><span class="sr">Fotografije</span></h1>
   </div>
   <div class="gallery-layout">
-    <div class="gallery-grid" id="galleryGrid">
-      <!-- First 3 fixed -->
-      <div class="gallery-item" onclick="openLightbox('https://raw.githubusercontent.com/LordHidetora/milena-predic-website/main/naslovna_hero_.JPG')">
-        <img src="https://raw.githubusercontent.com/LordHidetora/milena-predic-website/main/naslovna_hero_.JPG" alt="Milena Predić">
-        <div class="gallery-item-overlay">⊕</div>
-      </div>
-      <div class="gallery-item" onclick="openLightbox('https://raw.githubusercontent.com/LordHidetora/milena-predic-website/main/about_1.JPG')">
-        <img src="https://raw.githubusercontent.com/LordHidetora/milena-predic-website/main/about_1.JPG" alt="Milena Predić">
-        <div class="gallery-item-overlay">⊕</div>
-      </div>
-      <div class="gallery-item" onclick="openLightbox('https://raw.githubusercontent.com/LordHidetora/milena-predic-website/main/about_2.JPG')">
-        <img src="https://raw.githubusercontent.com/LordHidetora/milena-predic-website/main/about_2.JPG" alt="Milena Predić">
-        <div class="gallery-item-overlay">⊕</div>
-      </div>
+    <div class="gallery-tabs">
+      <button class="gallery-tab active" onclick="switchGalleryTab('portraits', this)">
+        <span class="en">Portraits</span><span class="sr">Portreti</span>
+      </button>
+      <button class="gallery-tab" onclick="switchGalleryTab('production', this)">
+        <span class="en">Production</span><span class="sr">Produkcija</span>
+      </button>
+      <button class="gallery-tab" onclick="switchGalleryTab('press', this)">
+        <span class="en">Press & Events</span><span class="sr">Press i Događaji</span>
+      </button>
     </div>
 
-    <script>
-    (function() {
-      const base = 'https://raw.githubusercontent.com/LordHidetora/milena-predic-website/main/';
-      const photos = [
-        'gallery_1.JPG',
-        'gallery_2.JPG',
-        'gallery_3.JPG',
-        'gallery_4.JPG',
-        'gallery_5.JPG',
-        'gallery_6.JPG',
-        'gallery_7.JPG',
-        'gallery_8.jpg',
-        'gallery_9.jpg',
-        'gallery_10.jpg',
-        'gallery_11.JPG',
-        'gallery_12.JPG',
-        'gallery_13.png',
-        'gallery_14.JPG',
-        'gallery_15.JPG',
-        'gallery_16.JPG',
-        'gallery_17.JPG',
-        'gallery_18.JPG',
-        'gallery_19.JPG',
-        'gallery_20.JPG',
-        'gallery_21.JPG',
-        'gallery_22.JPG',
-        'gallery_23.JPG',
-        'gallery_24.JPG',
-      ];
+    <!-- PORTRAITS -->
+    <div class="gallery-section active" id="gallery-portraits">
+      <div class="gallery-grid" id="portraitsGrid"></div>
+    </div>
 
-      // Shuffle
-      for (let i = photos.length - 1; i > 0; i--) {
+    <!-- PRODUCTION -->
+    <div class="gallery-section" id="gallery-production">
+      <div class="gallery-grid" id="productionGrid"></div>
+    </div>
+
+    <!-- PRESS -->
+    <div class="gallery-section" id="gallery-press">
+      <div class="gallery-grid" id="pressGrid"></div>
+    </div>
+  </div>
+
+  <script>
+  (function() {
+    const base = 'https://raw.githubusercontent.com/LordHidetora/milena-predic-website/main/';
+
+    const portraits = [
+      'naslovna_hero_.JPG',
+      'about_1.JPG',
+      'about_2.JPG',
+      'headshot_1.JPG','headshot_2.JPG','headshot_3.JPG','headshot_4.JPG',
+      'headshot_5.JPG','headshot_6.JPG','headshot_7.JPG','headshot_8.JPG','headshot_9.JPG'
+    ];
+
+    const production = [
+      'production_1.JPG','production_2.JPG','production_3.JPG','production_4.JPG',
+      'production_5.JPG','production_6.JPG','production_7.JPG','production_8.JPG',
+      'production_9.JPG','production_10.JPG','production_11.JPG','production_12.JPG',
+      'production_13.JPG','production_14.JPG','production_15.JPG','production_16.JPG',
+      'production_17.JPG','production_18.JPG','production_19.JPG','production_20.JPG',
+      'production_21.JPG','production_22.JPG','production_23.JPG','production_24.JPG',
+      'production_25.JPG','production_26.JPG','production_27.JPG','production_28.JPG',
+      'production_29.JPG','production_30.JPG'
+    ];
+
+    const press = [
+      'press_1.JPG','press_2.JPG','press_3.JPG','press_4.JPG','press_5.JPG',
+      'press_6.JPG','press_7.JPG','press_8.JPG','press_9.JPG'
+    ];
+
+    function shuffle(arr) {
+      for (let i = arr.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
-        [photos[i], photos[j]] = [photos[j], photos[i]];
+        [arr[i], arr[j]] = [arr[j], arr[i]];
       }
+      return arr;
+    }
 
-      const grid = document.getElementById('galleryGrid');
-      photos.forEach(function(p) {
+    function buildGrid(gridId, photos, shuffled) {
+      const grid = document.getElementById(gridId);
+      const list = shuffled ? shuffle([...photos]) : photos;
+      list.forEach(function(p) {
         const url = base + p;
         const div = document.createElement('div');
         div.className = 'gallery-item';
@@ -1657,9 +1688,21 @@
         div.innerHTML = '<img src="' + url + '" alt="Milena Predić"><div class="gallery-item-overlay">⊕</div>';
         grid.appendChild(div);
       });
-    })();
-    </script>
-  </div>
+    }
+
+    buildGrid('portraitsGrid', portraits, false);
+    buildGrid('productionGrid', production, true);
+    buildGrid('pressGrid', press, true);
+  })();
+
+  function switchGalleryTab(tab, btn) {
+    document.querySelectorAll('.gallery-section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.gallery-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById('gallery-' + tab).classList.add('active');
+    btn.classList.add('active');
+  }
+  </script>
+
   <footer>
     <span class="footer-name">Milena Predić</span>
     <span class="footer-copy">© 2025</span>
