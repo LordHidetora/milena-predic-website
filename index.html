@@ -1802,27 +1802,28 @@
         </div>
       </div>
     </div>
-    <div class="contact-form">
+      <div class="contact-form">
       <p class="section-eyebrow" style="margin-bottom:32px"><span class="en">Send a Message</span><span class="sr">Pošalji Poruku</span></p>
       <div class="form-group">
         <label class="form-label"><span class="en">Name</span><span class="sr">Ime</span></label>
-        <input type="text" class="form-input" placeholder="">
+        <input type="text" name="name" class="form-input" placeholder="">
       </div>
       <div class="form-group">
         <label class="form-label">Email</label>
-        <input type="email" class="form-input" placeholder="">
+        <input type="email" name="email" class="form-input" placeholder="">
       </div>
       <div class="form-group">
         <label class="form-label"><span class="en">Subject</span><span class="sr">Naslov</span></label>
-        <input type="text" class="form-input" placeholder="">
+        <input type="text" name="subject" class="form-input" placeholder="">
       </div>
       <div class="form-group">
         <label class="form-label"><span class="en">Message</span><span class="sr">Poruka</span></label>
-        <textarea class="form-textarea"></textarea>
+        <textarea name="message" class="form-textarea"></textarea>
       </div>
-      <button class="btn-primary" onclick="submitForm()" style="width:100%; justify-content:center;">
+      <button class="btn-primary" onclick="submitForm(event)" style="width:100%; justify-content:center;">
         <span class="en">Send Message</span><span class="sr">Pošalji Poruku</span>
       </button>
+      <p id="formStatus" style="margin-top:16px; font-size:13px; color:var(--accent); display:none;"></p>
     </div>
   </div>
   <footer>
@@ -1898,8 +1899,39 @@
   }
 
   // Contact form
-  function submitForm() {
-    alert('Thank you. Your message has been sent to milenapredicster@gmail.com');
+  async function submitForm(e) {
+    e.preventDefault();
+    const btn = e.target;
+    const status = document.getElementById('formStatus');
+    const form = btn.closest('.contact-form');
+    const data = {
+      name: form.querySelector('[name="name"]').value,
+      email: form.querySelector('[name="email"]').value,
+      subject: form.querySelector('[name="subject"]').value,
+      message: form.querySelector('[name="message"]').value
+    };
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+    try {
+      const res = await fetch('https://formspree.io/f/mvznvynv', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(data)
+      });
+      if (res.ok) {
+        status.textContent = 'Message sent. Thank you.';
+        status.style.display = 'block';
+        form.querySelectorAll('input, textarea').forEach(el => el.value = '');
+      } else {
+        status.textContent = 'Something went wrong. Please email directly.';
+        status.style.display = 'block';
+      }
+    } catch(err) {
+      status.textContent = 'Something went wrong. Please email directly.';
+      status.style.display = 'block';
+    }
+    btn.disabled = false;
+    btn.innerHTML = '<span class="en">Send Message</span><span class="sr">Pošalji Poruku</span>';
   }
 
   // Fade-in on scroll
