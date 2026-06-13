@@ -1804,26 +1804,27 @@
     </div>
       <div class="contact-form">
       <p class="section-eyebrow" style="margin-bottom:32px"><span class="en">Send a Message</span><span class="sr">Pošalji Poruku</span></p>
+      <form action="https://formspree.io/f/mvznvynv" method="POST">
       <div class="form-group">
         <label class="form-label"><span class="en">Name</span><span class="sr">Ime</span></label>
-        <input type="text" name="name" class="form-input" placeholder="">
+        <input type="text" name="name" class="form-input" required>
       </div>
       <div class="form-group">
         <label class="form-label">Email</label>
-        <input type="email" name="email" class="form-input" placeholder="">
+        <input type="email" name="email" class="form-input" required>
       </div>
       <div class="form-group">
         <label class="form-label"><span class="en">Subject</span><span class="sr">Naslov</span></label>
-        <input type="text" name="subject" class="form-input" placeholder="">
+        <input type="text" name="subject" class="form-input">
       </div>
       <div class="form-group">
         <label class="form-label"><span class="en">Message</span><span class="sr">Poruka</span></label>
-        <textarea name="message" class="form-textarea"></textarea>
+        <textarea name="message" class="form-textarea" required></textarea>
       </div>
-      <button class="btn-primary" onclick="submitForm(event)" style="width:100%; justify-content:center;">
+      <button type="submit" class="btn-primary" style="width:100%; justify-content:center;">
         <span class="en">Send Message</span><span class="sr">Pošalji Poruku</span>
       </button>
-      <p id="formStatus" style="margin-top:16px; font-size:13px; color:var(--accent); display:none;"></p>
+      </form>
     </div>
   </div>
   <footer>
