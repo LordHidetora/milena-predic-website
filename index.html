@@ -1945,7 +1945,23 @@
     }
   }
 
-  // Fade-in on scroll
+  // Pause Vimeo videos when switching tabs or navigating away
+  function pauseAllVideos() {
+    document.querySelectorAll('iframe[src*="vimeo"]').forEach(function(iframe) {
+      iframe.contentWindow.postMessage('{"method":"pause"}', '*');
+    });
+  }
+
+  document.addEventListener('visibilitychange', function() {
+    if (document.hidden) pauseAllVideos();
+  });
+
+  // Also pause when navigating between pages
+  const originalNavigate = navigate;
+  navigate = function(page) {
+    pauseAllVideos();
+    originalNavigate(page);
+  };
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.1 });
