@@ -1635,13 +1635,14 @@
   (function() {
     const base = 'https://raw.githubusercontent.com/LordHidetora/milena-predic-website/main/';
 
-    const portraits = [
-      'naslovna_hero_.JPG',
+    const portraitsFirst = ['naslovna_hero_.JPG'];
+    const portraitsRest = [
       'about_1.JPG',
       'about_2.JPG',
       'headshot_1.JPG','headshot_2.JPG','headshot_3.JPG','headshot_4.JPG',
       'headshot_5.JPG','headshot_6.JPG','headshot_7.JPG','headshot_8.JPG','headshot_9.JPG'
     ];
+    const portraits = portraitsFirst.concat(shuffle([...portraitsRest]));
 
     const production = [
       'production_1.JPG','production_2.JPG','production_3.JPG','production_4.JPG',
